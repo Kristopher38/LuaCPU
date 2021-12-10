@@ -1,0 +1,52 @@
+// lua_cpu.v
+
+// This file was auto-generated as a prototype implementation of a module
+// created in component editor.  It ties off all outputs to ground and
+// ignores all inputs.  It needs to be edited to make it do something
+// useful.
+// 
+// This file will not be automatically regenerated.  You should check it in
+// to your version control system if you want to keep it.
+
+`timescale 1 ps / 1 ps
+module lua_cpu (
+		input  wire [31:0] nios_lua_exec_slave_dataa,   // nios_lua_exec_slave.dataa
+		input  wire [31:0] nios_lua_exec_slave_datab,   //                    .datab
+		output wire [31:0] nios_lua_exec_slave_result,  //                    .result
+		input  wire        nios_lua_exec_slave_clk,     //                    .clk
+		input  wire        nios_lua_exec_slave_clk_en,  //                    .clk_en
+		input  wire        nios_lua_exec_slave_start,   //                    .start
+		output wire        nios_lua_exec_slave_done,    //                    .done
+		input  wire [4:0]  nios_lua_exec_slave_a,       //                    .a
+		input  wire [4:0]  nios_lua_exec_slave_b,       //                    .b
+		input  wire [4:0]  nios_lua_exec_slave_c,       //                    .c
+		input  wire [1:0]  nios_lua_exec_slave_n,       //                    .n
+		input  wire        nios_lua_exec_slave_readra,  //                    .readra
+		input  wire        nios_lua_exec_slave_readrb,  //                    .readrb
+		input  wire        nios_lua_exec_slave_reset,   //                    .reset
+		input  wire        nios_lua_exec_slave_writerc, //                    .writerc
+		output wire [31:0] avalon_master_address,       //       avalon_master.address
+		input  wire [31:0] avalon_master_readdata,      //                    .readdata
+		output wire [31:0] avalon_master_writedata,     //                    .writedata
+		output wire        avalon_master_read,          //                    .read
+		output wire        avalon_master_write,         //                    .write
+		input  wire        avalon_master_waitrequest,   //                    .waitrequest
+		input  wire        clock_sink_clk,              //          clock_sink.clk
+		input  wire        reset_sink_reset             //          reset_sink.reset
+	);
+
+	// TODO: Auto-generated HDL template
+
+	assign nios_lua_exec_slave_done = 1'b0;
+
+	assign nios_lua_exec_slave_result = 32'b00000000000000000000000000000000;
+
+	assign avalon_master_address = 32'b00000000000000000000000000000000;
+
+	assign avalon_master_read = 1'b0;
+
+	assign avalon_master_writedata = 32'b00000000000000000000000000000000;
+
+	assign avalon_master_write = 1'b0;
+
+endmodule

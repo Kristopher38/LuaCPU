@@ -1,5 +1,5 @@
 Assembler report for HPS_LED_HEX
-Thu Dec  9 02:07:48 2021
+Fri Dec 10 23:42:11 2021
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: HPS_LED_HEX.sof
+  6. Assembler Device Options: HPS_LED_HEX_time_limited.sof
   7. Assembler Messages
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Dec  9 02:07:48 2021 ;
+; Assembler Status      ; Successful - Fri Dec 10 23:42:11 2021 ;
 ; Revision Name         ; HPS_LED_HEX                           ;
 ; Top-level Entity Name ; HPS_LED_HEX                           ;
 ; Family                ; Cyclone V                             ;
@@ -54,34 +54,35 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+------------------------------------------------+
-; Assembler Encrypted IP Cores Summary           ;
-+--------+------------------------+--------------+
-; Vendor ; IP Core Name           ; License Type ;
-+--------+------------------------+--------------+
-; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
-; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
-+--------+------------------------+--------------+
++--------------------------------------------------------+
+; Assembler Encrypted IP Cores Summary                   ;
++--------+-------------------------------+---------------+
+; Vendor ; IP Core Name                  ; License Type  ;
++--------+-------------------------------+---------------+
+; Altera ; Nios II Processor (6AF7 00A2) ; OpenCore Plus ;
+; Altera ; Signal Tap (6AF7 BCE1)        ; Licensed      ;
+; Altera ; Signal Tap (6AF7 BCEC)        ; Licensed      ;
++--------+-------------------------------+---------------+
 
 
-+---------------------------+
-; Assembler Generated Files ;
-+---------------------------+
-; File Name                 ;
-+---------------------------+
-; HPS_LED_HEX.sof           ;
-+---------------------------+
++------------------------------+
+; Assembler Generated Files    ;
++------------------------------+
+; File Name                    ;
++------------------------------+
+; HPS_LED_HEX_time_limited.sof ;
++------------------------------+
 
 
-+-------------------------------------------+
-; Assembler Device Options: HPS_LED_HEX.sof ;
-+----------------+--------------------------+
-; Option         ; Setting                  ;
-+----------------+--------------------------+
-; Device         ; 5CSEMA5F31C6             ;
-; JTAG usercode  ; 0x02669949               ;
-; Checksum       ; 0x02669949               ;
-+----------------+--------------------------+
++--------------------------------------------------------+
+; Assembler Device Options: HPS_LED_HEX_time_limited.sof ;
++----------------+---------------------------------------+
+; Option         ; Setting                               ;
++----------------+---------------------------------------+
+; Device         ; 5CSEMA5F31C6                          ;
+; JTAG usercode  ; 0x02963ECA                            ;
+; Checksum       ; 0x02963ECA                            ;
++----------------+---------------------------------------+
 
 
 +--------------------+
@@ -90,14 +91,17 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Dec  9 02:07:39 2021
+    Info: Processing started: Fri Dec 10 23:42:02 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off HPS_LED_HEX -c HPS_LED_HEX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
+Info (115017): Design contains a time-limited core -- only a single, time-limited programming file can be generated
+Warning (210042): Can't convert time-limited SOF into POF, HEX File, TTF, or RBF
+Info (210040): SRAM Object File /home/kris/luacpu/hardware/HPS_LED_HEX_time_limited.sof contains time-limited megafunction that supports OpenCore Plus feature -- Vendor: 0x6AF7, Product: 0x00A2
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
-Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1027 megabytes
-    Info: Processing ended: Thu Dec  9 02:07:48 2021
+Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 1071 megabytes
+    Info: Processing ended: Fri Dec 10 23:42:11 2021
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:09
 

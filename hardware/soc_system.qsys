@@ -70,6 +70,14 @@
          type = "String";
       }
    }
+   element lua_cpu_0
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+   }
    element nios2_gen2_0
    {
       datum _sortIndex
@@ -116,6 +124,30 @@
       {
          value = "6";
          type = "int";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
       }
    }
    element sysid
@@ -769,6 +801,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
+ <module name="lua_cpu_0" kind="lua_cpu" version="1.0" enabled="1" />
  <module
    name="nios2_gen2_0"
    kind="altera_nios2_gen2"
@@ -786,7 +819,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="lua_cpu_0" baseAddress="0" addressSpan="4" clockCycleType="VARIABLE" /></info>]]></parameter>
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -801,9 +834,9 @@
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_numTCDM" value="0" />
   <parameter name="dcache_ramBlockType" value="Automatic" />
-  <parameter name="dcache_size" value="2048" />
+  <parameter name="dcache_size" value="0" />
   <parameter name="dcache_tagramBlockType" value="Automatic" />
-  <parameter name="dcache_victim_buf_impl" value="ram" />
+  <parameter name="dcache_victim_buf_impl" value="reg" />
   <parameter name="debug_OCIOnchipTrace" value="_1k" />
   <parameter name="debug_assignJtagInstanceID" value="false" />
   <parameter name="debug_datatrigger" value="0" />
@@ -830,7 +863,7 @@
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_size" value="2048" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
-  <parameter name="impl" value="Tiny" />
+  <parameter name="impl" value="Fast" />
   <parameter name="instAddrWidth" value="31" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_controller_0.s1' start='0x0' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x70000800' end='0x70001000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
@@ -1232,6 +1265,15 @@
  <connection
    kind="avalon"
    version="16.1"
+   start="lua_cpu_0.avalon_master"
+   end="sdram_controller_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="16.1"
    start="nios2_gen2_0.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1351,6 +1393,11 @@
    kind="clock"
    version="16.1"
    start="pll_0.outclk0"
+   end="lua_cpu_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="16.1"
+   start="pll_0.outclk0"
    end="hps_0.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -1380,6 +1427,15 @@
    start="nios2_gen2_0.irq"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="16.1"
+   start="nios2_gen2_0.custom_instruction_master"
+   end="lua_cpu_0.nios_lua_exec_slave">
+  <parameter name="CIName" value="lua_cpu_0" />
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0" />
  </connection>
  <connection kind="reset" version="16.1" start="clk_0.clk_reset" end="sysid.reset" />
  <connection
@@ -1416,6 +1472,11 @@
  <connection
    kind="reset"
    version="16.1"
+   start="clk_0.clk_reset"
+   end="lua_cpu_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="16.1"
    start="nios2_gen2_0.debug_reset_request"
    end="nios2_gen2_0.reset" />
  <connection
@@ -1448,6 +1509,11 @@
    version="16.1"
    start="nios2_gen2_0.debug_reset_request"
    end="sysid_qsys_0.reset" />
+ <connection
+   kind="reset"
+   version="16.1"
+   start="nios2_gen2_0.debug_reset_request"
+   end="lua_cpu_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

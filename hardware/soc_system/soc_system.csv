@@ -1,0 +1,43 @@
+# system info soc_system on 2021.12.11.00:08:28
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1639177701
+#
+#
+# Files generated for soc_system on 2021.12.11.00:08:28
+files:
+filepath,kind,attributes,module,is_top
+simulation/soc_system.v,VERILOG,,soc_system,true
+simulation/submodules/soc_system_hps_0.v,VERILOG,,soc_system_hps_0,false
+simulation/submodules/soc_system_jtag_uart.v,VERILOG,,soc_system_jtag_uart,false
+simulation/submodules/soc_system_leds_0.v,VERILOG,,soc_system_leds_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+soc_system.hps_0,soc_system_hps_0
+soc_system.hps_0.fpga_interfaces,soc_system_hps_0_fpga_interfaces
+soc_system.hps_0.hps_io,soc_system_hps_0_hps_io
+soc_system.jtag_uart,soc_system_jtag_uart
+soc_system.leds_0,soc_system_leds_0
+soc_system.lua_cpu_0,soc_system_lua_cpu_0
+soc_system.nios2_gen2_0,soc_system_nios2_gen2_0
+soc_system.onchip_memory2_0,soc_system_onchip_memory2_0
+soc_system.pll_0,soc_system_pll_0
+soc_system.sdram_controller_0,soc_system_sdram_controller_0
+soc_system.sysid,soc_system_sysid
+soc_system.sysid_qsys_0,soc_system_sysid_qsys_0
+soc_system.nios2_gen2_0_custom_instruction_master_translator,altera_customins_master_translator
+soc_system.nios2_gen2_0_custom_instruction_master_multi_xconnect,soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect
+soc_system.nios2_gen2_0_custom_instruction_master_multi_slave_translator0,altera_customins_slave_translator
+soc_system.mm_interconnect_0,soc_system_mm_interconnect_0
+soc_system.irq_mapper,soc_system_irq_mapper
+soc_system.irq_mapper_001,soc_system_irq_mapper_001
+soc_system.irq_mapper_002,soc_system_irq_mapper_002
+soc_system.rst_controller,altera_reset_controller
+soc_system.rst_controller_001,altera_reset_controller
+soc_system.rst_controller_002,altera_reset_controller
+soc_system.rst_controller_003,altera_reset_controller
+soc_system.rst_controller_004,altera_reset_controller

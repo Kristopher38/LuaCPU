@@ -86,7 +86,7 @@ module soc_system_nios2_gen2_0_cpu_debug_slave_wrapper (
   input            tracemem_on;
   input   [ 35: 0] tracemem_trcdata;
   input            tracemem_tw;
-  input   [  6: 0] trc_im_addr;
+  input   [  9: 0] trc_im_addr;
   input            trc_on;
   input            trc_wrap;
   input            trigbrktype;
