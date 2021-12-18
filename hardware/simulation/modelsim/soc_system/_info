@@ -1,0 +1,2699 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/kris/luacpu/hardware/simulation/modelsim
+valtdq_dqs2_acv_connect_to_hard_phy_cyclonev
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1639669642
+!i10b 1
+!s100 L@LBY8?m2K81I=]<dLF[?0
+IX7P23k8Q0Eh_Mg]dTzfM93
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 altdq_dqs2_acv_connect_to_hard_phy_cyclonev_sv_unit
+S1
+R0
+Z4 w1639614047
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv
+L0 19
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1639669642.000000
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv|
+!i113 1
+Z7 o-sv -work soc_system
+Z8 !s92 -sv -work soc_system +incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules
+Z9 tCvgOpt 0
+valtera_avalon_sc_fifo
+Z10 !s110 1639669641
+!i10b 1
+!s100 4mK@em][G=j]om3zJIhOc0
+IK6l8j9ZloZj072CozWV161
+R3
+R0
+Z11 w1639614036
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Z12 L0 21
+R5
+r1
+!s85 0
+31
+Z13 !s108 1639669641.000000
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v|
+!i113 1
+Z14 o-vlog01compat -work soc_system
+Z15 !s92 -vlog01compat -work soc_system +incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules
+R9
+valtera_avalon_st_clock_crosser
+Z16 !s110 1639669640
+!i10b 1
+!s100 YbU`iK^TYJ_9Hz`CZekjQ3
+I1ko_I4AJ=::An2FdQjllc3
+R3
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_clock_crosser.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_clock_crosser.v
+L0 22
+R5
+r1
+!s85 0
+31
+Z17 !s108 1639669640.000000
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_clock_crosser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_clock_crosser.v|
+!i113 1
+R14
+R15
+R9
+valtera_avalon_st_handshake_clock_crosser
+R16
+!i10b 1
+!s100 3f<J9K;e[9FU@JKn0^PK?0
+I^TenhI?UXHM`SCO5a0Zej2
+R3
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+Z18 L0 24
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v|
+!i113 1
+R14
+R15
+R9
+valtera_customins_master_translator
+R16
+!i10b 1
+!s100 iAjRYXBhGZ_FfnYD?k0U83
+I`RKDzaOeLcz0J=lUQb7]R1
+R3
+R0
+Z19 w1639614031
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_master_translator.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_master_translator.v
+Z20 L0 23
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_master_translator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_master_translator.v|
+!i113 1
+R14
+R15
+R9
+valtera_customins_slave_translator
+R1
+R2
+!i10b 1
+!s100 eT_W^Bknf@>l5M0QHL[2D1
+I5TPz:Lobz7cRR`RSoW0U81
+R3
+!s105 altera_customins_slave_translator_sv_unit
+S1
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_slave_translator.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_slave_translator.sv
+R20
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_slave_translator.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_customins_slave_translator.sv|
+!i113 1
+R7
+R8
+R9
+valtera_mem_if_dll_cyclonev
+R1
+R2
+!i10b 1
+!s100 [9G>WEm;j6E]1F8H81dZV1
+IZCU4K4Tc5HH[>_`EACR<k3
+R3
+!s105 altera_mem_if_dll_cyclonev_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_dll_cyclonev.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_dll_cyclonev.sv
+R20
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_dll_cyclonev.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_dll_cyclonev.sv|
+!i113 1
+R7
+R8
+R9
+valtera_mem_if_hard_memory_controller_top_cyclonev
+R1
+R2
+!i10b 1
+!s100 PV@kBzX4E7SXn_NC4_1fM3
+I^ELH:11biQih[QfS=l_ng2
+R3
+!s105 altera_mem_if_hard_memory_controller_top_cyclonev_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv
+Z21 L0 18
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv|
+!i113 1
+R7
+R8
+R9
+valtera_mem_if_hhp_qseq_synth_top
+R16
+!i10b 1
+!s100 N_QfhY9G55ERAG1GzlAo@2
+I3FR]]AYk>X6`OO`d`CZe`1
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hhp_qseq_synth_top.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hhp_qseq_synth_top.v
+L0 15
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hhp_qseq_synth_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_hhp_qseq_synth_top.v|
+!i113 1
+R14
+R15
+R9
+valtera_mem_if_oct_cyclonev
+R1
+R2
+!i10b 1
+!s100 AcnzJmTb5Jz0V@UURnjO60
+IbbfgW^Bked^TO<3T19?Ca3
+R3
+!s105 altera_mem_if_oct_cyclonev_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_oct_cyclonev.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_oct_cyclonev.sv
+R20
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_oct_cyclonev.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_mem_if_oct_cyclonev.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_address_alignment
+R1
+R10
+!i10b 1
+!s100 ;A9^i^d]cR@BAQXEG>h_<3
+IQQ<F5a[]C2PS:OHQ<U`B>2
+R3
+!s105 altera_merlin_address_alignment_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+L0 26
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_arb_adder
+R1
+R10
+!i10b 1
+!s100 1Jn[a;@5nZmTN?DFKQNzj2
+IWkTYTgjRAlNgQcWgfPo5c3
+R3
+Z22 !s105 altera_merlin_arbitrator_sv_unit
+S1
+R0
+R11
+Z23 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Z24 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+L0 228
+R5
+r1
+!s85 0
+31
+R13
+Z25 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv|
+Z26 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_arbitrator
+R1
+R10
+!i10b 1
+!s100 NQTehjm2fNQROUMUzShGa1
+IY?G3<T;mm499:mZ[?l>]D1
+R3
+R22
+S1
+R0
+R11
+R23
+R24
+L0 103
+R5
+r1
+!s85 0
+31
+R13
+R25
+R26
+!i113 1
+R7
+R8
+R9
+valtera_merlin_axi_master_ni
+R1
+R2
+!i10b 1
+!s100 3_AI>HiSXNYzWC0UYFJ8?0
+IX=XACA8caIM8_VeAFMJB63
+R3
+!s105 altera_merlin_axi_master_ni_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_axi_master_ni.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_axi_master_ni.sv
+Z27 L0 27
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_axi_master_ni.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_axi_master_ni.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter
+R1
+R10
+!i10b 1
+!s100 OCc70X^k:B?GW6i71n`L_3
+ISIlJ=ZVf2f^iNJPb7><6F3
+R3
+!s105 altera_merlin_burst_adapter_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter.sv
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter_13_1
+R1
+R10
+!i10b 1
+!s100 iQDJAL[b9z>XeokOb35D]1
+IT:IPY@=A3z7G`OYQ2R`Rf3
+R3
+Z28 !s105 altera_merlin_burst_adapter_13_1_sv_unit
+S1
+R0
+R11
+Z29 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_13_1.sv
+Z30 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_13_1.sv
+L0 264
+R5
+r1
+!s85 0
+31
+R13
+Z31 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_13_1.sv|
+Z32 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_13_1.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter_adder
+R1
+R10
+!i10b 1
+!s100 cJB8e]Mn>T^mE[9iEE1jk1
+I;78N<:]7BM2G2eY5GRNR`3
+R3
+R28
+S1
+R0
+R11
+R29
+R30
+L0 55
+R5
+r1
+!s85 0
+31
+R13
+R31
+R32
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter_burstwrap_increment
+R1
+R10
+!i10b 1
+!s100 ILP^RoOQ^]Ef]XAJeF<SX0
+I:z?J]7K@WP3FQQ=;Ycb[U2
+R3
+R28
+S1
+R0
+R11
+R29
+R30
+Z33 L0 40
+R5
+r1
+!s85 0
+31
+R13
+R31
+R32
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter_min
+R1
+R10
+!i10b 1
+!s100 5OK?oF?>S0i7IYQi<IKhS1
+IHAXH;U4bRaDjSn@`JOg6e1
+R3
+R28
+S1
+R0
+R11
+R29
+R30
+L0 98
+R5
+r1
+!s85 0
+31
+R13
+R31
+R32
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter_subtractor
+R1
+R10
+!i10b 1
+!s100 3nMfY`gC_:azzfSULAX8f2
+Iz<@;]PL=aM9Fkl?]Y8gMD0
+R3
+R28
+S1
+R0
+R11
+R29
+R30
+L0 77
+R5
+r1
+!s85 0
+31
+R13
+R31
+R32
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_adapter_uncompressed_only
+R1
+R10
+!i10b 1
+!s100 STH]BdUM[JDMJZNJGXCd>0
+IFK7?cR_^bScOCcV[4f19;0
+R3
+!s105 altera_merlin_burst_adapter_uncmpr_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv
+L0 39
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_burst_uncompressor
+R1
+R10
+!i10b 1
+!s100 f1?Rb<=9U?R9LJoHl;7>T3
+IXX8F85MHfT5Lb_Q]MmCn50
+R3
+!s105 altera_merlin_burst_uncompressor_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+R33
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_master_agent
+R1
+R2
+!i10b 1
+!s100 _CJm:YX=>U2LQKH;8=@cb0
+IB49^iLXYkV[V9j29l;?5Z0
+R3
+!s105 altera_merlin_master_agent_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_agent.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_agent.sv
+Z34 L0 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_agent.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_agent.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_master_translator
+R1
+R2
+!i10b 1
+!s100 NdRk@]3fC2C@V7Rm;dQM31
+I`E9khS7knSa7M@h]D:_691
+R3
+!s105 altera_merlin_master_translator_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_translator.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_translator.sv
+L0 32
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_translator.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_master_translator.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_slave_agent
+R1
+R2
+!i10b 1
+!s100 ePZN1d?B062J`OBb?blff3
+I_DJXa?dOiB6S?mI]_OziN3
+R3
+!s105 altera_merlin_slave_agent_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_agent.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_agent.sv
+Z35 L0 34
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_agent.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_agent.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_slave_translator
+R1
+R2
+!i10b 1
+!s100 k`9[YAn_dLTkg;GE`mOb61
+Ilh7B4PH;h3I]YaYfY4V:<0
+R3
+!s105 altera_merlin_slave_translator_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_translator.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_translator.sv
+L0 35
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_translator.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_slave_translator.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_traffic_limiter
+R1
+R10
+!i10b 1
+!s100 0h4;DR_^c13j]SXILa7d?1
+IINM=M=C]14NnI5?H5>MdY0
+R3
+!s105 altera_merlin_traffic_limiter_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_traffic_limiter.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_traffic_limiter.sv
+L0 49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_traffic_limiter.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_traffic_limiter.sv|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_width_adapter
+R1
+R10
+!i10b 1
+!s100 QzdA5DP6CReOTH<9QzODa3
+IBfJRUEjYZ<_Fc_FR`Joa]1
+R3
+!s105 altera_merlin_width_adapter_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_width_adapter.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_width_adapter.sv
+Z36 L0 25
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_width_adapter.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_width_adapter.sv|
+!i113 1
+R7
+R8
+R9
+valtera_reset_controller
+Z37 !s110 1639669639
+!i10b 1
+!s100 z[H_hRO9gO=:^2E3_jWH03
+IdWV[V:OhZZ>J68_5?n7BD3
+R3
+R0
+Z38 w1639614032
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_controller.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_controller.v
+L0 42
+R5
+r1
+!s85 0
+31
+Z39 !s108 1639669639.000000
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_controller.v|
+!i113 1
+R14
+R15
+R9
+valtera_reset_synchronizer
+R37
+!i10b 1
+!s100 oWLYmSO[EOX[G0PgQhZ2=0
+IJ=E_gWcOz]C@Fomg[hg;e3
+R3
+R0
+R38
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_synchronizer.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_synchronizer.v
+R18
+R5
+r1
+!s85 0
+31
+R39
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_reset_synchronizer.v|
+!i113 1
+R14
+R15
+R9
+valtera_std_synchronizer_nocut
+R16
+!i10b 1
+!s100 b8zV2<79GgkNg0GC<P[GJ2
+ILL@mb883EGU>9W_?1E7;M2
+R3
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_std_synchronizer_nocut.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_std_synchronizer_nocut.v
+L0 44
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_std_synchronizer_nocut.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_std_synchronizer_nocut.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram
+R16
+!i10b 1
+!s100 jbW90WZhb:4iXkRi;gdi^0
+IKKaG=V4a^o6Tkh3Y[<jAW3
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0
+R1
+R2
+!i10b 1
+!s100 ^51L0T@9;J3b7;fD0gebL2
+Ih5m6;D7a5HnTNdDDE:KUH3
+R3
+!s105 hps_sdram_p0_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0.sv
+R21
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0.sv|
+!i113 1
+R7
+R8
+R9
+vhps_sdram_p0_acv_hard_addr_cmd_pads
+R16
+!i10b 1
+!s100 JDiQYD`mV<S3ZbNU2oLkD2
+I:I5Ff^6f@^^D]TLP@@Z843
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_addr_cmd_pads.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_addr_cmd_pads.v
+Z40 L0 17
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_addr_cmd_pads.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_addr_cmd_pads.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0_acv_hard_io_pads
+R16
+!i10b 1
+!s100 SfJ5bje>CFhFCXN8?j91<1
+IW`GY8J=gOJ2LLa=CORU2Z3
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_io_pads.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_io_pads.v
+R40
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_io_pads.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_io_pads.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0_acv_hard_memphy
+R16
+!i10b 1
+!s100 YZmZZ30=2fY45]I4U[QfM1
+IQ8LKLEMQmL@foGRGJhXYU3
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_memphy.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_memphy.v
+R12
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_memphy.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_hard_memphy.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0_acv_ldc
+R16
+!i10b 1
+!s100 SK2LP`?Ld8_6n1Ui2PFoz1
+IE6=h@FJ5PMoRe39OAF`6K1
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_ldc.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_ldc.v
+R40
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_ldc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_acv_ldc.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0_altdqdqs
+R16
+!i10b 1
+!s100 Xk]PjMGV;<WQjf6YEGK3:1
+Icz[D2HJWGm7g7PhR<VC:?3
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_altdqdqs.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_altdqdqs.v
+R40
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_altdqdqs.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_altdqdqs.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0_clock_pair_generator
+R16
+!i10b 1
+!s100 XFAX];RG805f0mE=G4m7f3
+I[3dgdinMf76Id>MLnCbm:0
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_clock_pair_generator.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_clock_pair_generator.v
+R34
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_clock_pair_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_clock_pair_generator.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_p0_generic_ddio
+R16
+!i10b 1
+!s100 MEaB39e4Y6@9cRdAAXSbL3
+I@]2n@On30<^eaY2`4:mcf1
+R3
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_generic_ddio.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_generic_ddio.v
+R40
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_generic_ddio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_p0_generic_ddio.v|
+!i113 1
+R14
+R15
+R9
+vhps_sdram_pll
+R1
+R2
+!i10b 1
+!s100 U9abk]hQl`M=9NB[d=N6P0
+I0?@hhTEn^F=<=>iBS4NQd3
+R3
+!s105 hps_sdram_pll_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_pll.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_pll.sv
+R36
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_pll.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/hps_sdram_pll.sv|
+!i113 1
+R7
+R8
+R9
+vlua_cpu
+R16
+!i10b 1
+!s100 <9Z[>Zk<oBnzm4eihhI0l0
+I8abQHSUZ_HT@0?<8>AjJ[3
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/lua_cpu.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/lua_cpu.v
+L0 4
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/lua_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/lua_cpu.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system
+R37
+!i10b 1
+!s100 >he<]Xo6JHY6Tk``Giha31
+IcK`QT>L0H4F:b]KQIGK:Q3
+R3
+R0
+w1639614029
+8/home/kris/luacpu/hardware/soc_system/synthesis/soc_system.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/soc_system.v
+L0 6
+R5
+r1
+!s85 0
+31
+R39
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/soc_system.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis|/home/kris/luacpu/hardware/soc_system/synthesis/soc_system.v|
+!i113 1
+R14
+!s92 -vlog01compat -work soc_system +incdir+/home/kris/luacpu/hardware/soc_system/synthesis
+R9
+vsoc_system_hps_0
+R16
+!i10b 1
+!s100 N_Nca?CiJV@`c_ikdCz^z1
+IXX5>KGKelj]>SVO9XCKl`0
+R3
+R0
+w1639614030
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_hps_0_fpga_interfaces
+R1
+Z41 !s110 1639612422
+!i10b 1
+!s100 HCmg;b8ScHFo^K;9Z<[952
+IkAejdE>`@Sno_88bfM5E50
+R3
+!s105 soc_system_hps_0_fpga_interfaces_sv_unit
+S1
+R0
+w1639569420
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_fpga_interfaces.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_fpga_interfaces.sv
+Z42 L0 14
+R5
+r1
+!s85 0
+31
+!s108 1639612422.000000
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_fpga_interfaces.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_fpga_interfaces.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_hps_0_hps_io
+R16
+!i10b 1
+!s100 JoUO2^[2cD81BBD?eI@6m1
+IhlmGoR;DEBBe06bARFFAl1
+R3
+R0
+R38
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_hps_0_hps_io_border
+R1
+R41
+!i10b 1
+!s100 KKAjGjjV5XVY8V`nRdHdX2
+Ieaid3nb1bG1L[DQJC6?AK1
+R3
+!s105 soc_system_hps_0_hps_io_border_sv_unit
+S1
+R0
+w1639612404
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io_border.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io_border.sv
+R42
+R5
+r1
+!s85 0
+31
+!s108 1639612421.000000
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io_border.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_hps_0_hps_io_border.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_irq_mapper
+R1
+R16
+!i10b 1
+!s100 N8fb:9==@_S>9_B8iT>VQ1
+IKlChX7i0]aLLZ@]IDZ_cA2
+R3
+!s105 soc_system_irq_mapper_sv_unit
+S1
+R0
+R38
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper.sv
+Z43 L0 31
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_irq_mapper_001
+R1
+R16
+!i10b 1
+!s100 k`1M_Be;Fgk^n[1m<MBOT1
+I6Z1LRdOBDDe0nGm2OkhS91
+R3
+!s105 soc_system_irq_mapper_001_sv_unit
+S1
+R0
+R38
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_001.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_001.sv
+R43
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_001.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_001.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_irq_mapper_002
+R1
+R16
+!i10b 1
+!s100 <eJQElhRoF3nQKWOoQj`10
+IVjUIlfhXDRFd7RLfcLKiW1
+R3
+!s105 soc_system_irq_mapper_002_sv_unit
+S1
+R0
+R38
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_002.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_002.sv
+R43
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_002.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_irq_mapper_002.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_jtag_uart
+R16
+!i10b 1
+!s100 =WCCBEXS;nAIc`_De<`CK0
+ITj?BIzh;E;4GgY8d^iAe_2
+R3
+R0
+R19
+Z44 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_jtag_uart.v
+Z45 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_jtag_uart.v
+L0 331
+R5
+r1
+!s85 0
+31
+R17
+Z46 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_jtag_uart.v|
+Z47 !s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_jtag_uart.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_jtag_uart_scfifo_r
+R16
+!i10b 1
+!s100 ]G=lEef2hiRID2A6PccDZ2
+ISjFD?3A_Nea5VR20ecUa@2
+R3
+R0
+R19
+R44
+R45
+L0 243
+R5
+r1
+!s85 0
+31
+R17
+R46
+R47
+!i113 1
+R14
+R15
+R9
+vsoc_system_jtag_uart_scfifo_w
+R16
+!i10b 1
+!s100 ^LE95Z__g7a`^@CT<AN042
+I8;Uc]<>@`A09<>ciY6>G70
+R3
+R0
+R19
+R44
+R45
+L0 78
+R5
+r1
+!s85 0
+31
+R17
+R46
+R47
+!i113 1
+R14
+R15
+R9
+vsoc_system_jtag_uart_sim_scfifo_r
+R16
+!i10b 1
+!s100 1E1fZMCBa0eYVZaF@l;3I0
+IA:^6K0WzM7h[7eGQjoCed1
+R3
+R0
+R19
+R44
+R45
+L0 164
+R5
+r1
+!s85 0
+31
+R17
+R46
+R47
+!i113 1
+R14
+R15
+R9
+vsoc_system_jtag_uart_sim_scfifo_w
+R16
+!i10b 1
+!s100 MDYzeNCHXfhA>4E4d5`LR3
+Ii]OdDW35aL_BY_=fDAd411
+R3
+R0
+R19
+R44
+R45
+R12
+R5
+r1
+!s85 0
+31
+R17
+R46
+R47
+!i113 1
+R14
+R15
+R9
+vsoc_system_leds_0
+R16
+!i10b 1
+!s100 a;MIh:[io?NR9LnHPzTR52
+IldZNPENcV`TfPO5?P[Zo:1
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_leds_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_leds_0.v
+R12
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_leds_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_leds_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_mm_interconnect_0
+R16
+!i10b 1
+!s100 hZfID`IGNncdzcA5Yi@O:0
+I;;<GYUzE[eoclz89h@Gzn2
+R3
+R0
+R38
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+R39
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_mm_interconnect_0_avalon_st_adapter
+R16
+!i10b 1
+!s100 4:@NGBDQz;XNzhP2BdmVW1
+IZQ`Un6o1bGHJi5`=6WW`[0
+R3
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_mm_interconnect_0_avalon_st_adapter_001
+R16
+!i10b 1
+!s100 fXF:IJ[fO::kGSnH^R?5E0
+Io@>kz^I36=ebnRQ24_<FD0
+R3
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0
+R1
+R16
+!i10b 1
+!s100 63^CWAzPW^:ME:IJHffm00
+I]MPM5_8iYDL?:;m5]AN8;1
+R3
+!s105 soc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0.sv
+Z48 L0 66
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_avalon_st_adapter_006
+R16
+!i10b 1
+!s100 IE6c]SVbDe@`geFOQ^>iZ2
+I5<IgKXJAFz`9R[iG:I:J30
+R3
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0
+R1
+R16
+!i10b 1
+!s100 ?Ga=7j;_m4VXGm<k>zSSi1
+I]>K]V:DA5laiB3UzZGo]I1
+R3
+!s105 soc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv
+R48
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+R1
+R16
+!i10b 1
+!s100 QljGJ^Ak8Q8J=P^YlY=dY0
+IHLZ0k=fJK90d=ZAFhhlWY0
+R3
+!s105 soc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0_sv_unit
+S1
+R0
+R4
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+R48
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_demux
+R1
+R10
+!i10b 1
+!s100 j:O[>H>_k?lK7F1^4IhVL1
+ILF8B0fh^e7:kSD3aFU:iW1
+R3
+!s105 soc_system_mm_interconnect_0_cmd_demux_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux.sv
+Z49 L0 43
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_demux_001
+R1
+R10
+!i10b 1
+!s100 ES91;o0;f8Af[MiAXmJQ31
+I96L6BTEjfk1WA@<4TaUJn1
+R3
+!s105 soc_system_mm_interconnect_0_cmd_demux_001_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_001.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_001.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_001.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_001.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_demux_002
+R1
+R10
+!i10b 1
+!s100 lP3onO9H5fFXBkW91[z:30
+ImKfFFHgbac698zZMEhUQF0
+R3
+!s105 soc_system_mm_interconnect_0_cmd_demux_002_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_002.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_002.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_002.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_002.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_demux_003
+R1
+R10
+!i10b 1
+!s100 ODYP;=>OObzZGHVJX`Ee]2
+IBG7n1<8_H@i37iFhVT^8J3
+R3
+!s105 soc_system_mm_interconnect_0_cmd_demux_003_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_003.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_003.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_003.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_demux_003.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_mux
+R1
+R10
+!i10b 1
+!s100 TAP3=WjLa8M[lF=@UT?6F3
+INI1H8HUEEJ<mO4R4>?E5e2
+R3
+!s105 soc_system_mm_interconnect_0_cmd_mux_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux.sv
+Z50 L0 51
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_mux_001
+R1
+R10
+!i10b 1
+!s100 NkXkKbPMOn]bDMX^RSJH20
+IU1Y=RXbNGOW:9gT@6WaW]3
+R3
+!s105 soc_system_mm_interconnect_0_cmd_mux_001_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_001.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_001.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_001.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_001.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_mux_002
+R1
+R10
+!i10b 1
+!s100 FU`U5Vi:FJ?Lia<Pkj_CE0
+I^onWb2[Xk@54<k?UQGFK51
+R3
+!s105 soc_system_mm_interconnect_0_cmd_mux_002_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_002.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_002.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_002.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_002.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_mux_003
+R1
+R10
+!i10b 1
+!s100 XQX1fnbaieU1fodDOCa<i2
+Ii_L5RG7NB8IN[Y@h:nJmd0
+R3
+!s105 soc_system_mm_interconnect_0_cmd_mux_003_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_003.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_003.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_003.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_003.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_mux_005
+R1
+R10
+!i10b 1
+!s100 <2BX>?e6S<kS0o_jh:5A?1
+IHe4PMRzcC48j7fcm5iC`:1
+R3
+!s105 soc_system_mm_interconnect_0_cmd_mux_005_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_005.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_005.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_005.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_005.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_cmd_mux_006
+R1
+R10
+!i10b 1
+!s100 NPi5;]1KIIj=d8@Xm0GJo0
+Ia5cXV;hJYf337:3O6NI:60
+R3
+!s105 soc_system_mm_interconnect_0_cmd_mux_006_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_006.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_006.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_006.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_cmd_mux_006.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router
+R1
+R2
+!i10b 1
+!s100 cT:P9Hi@1eJmlEzMYl<8V1
+I0jl;ji>EJ9j6;e0;DjYz[3
+R3
+Z51 !s105 soc_system_mm_interconnect_0_router_sv_unit
+S1
+R0
+R11
+Z52 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router.sv
+Z53 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router.sv
+Z54 L0 84
+R5
+r1
+!s85 0
+31
+R6
+Z55 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router.sv|
+Z56 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_001
+R1
+R2
+!i10b 1
+!s100 6_G<XX8Blmo8Mg]WQT=Af3
+I8@VCLQZdRl]oLz_N]SEl10
+R3
+Z57 !s105 soc_system_mm_interconnect_0_router_001_sv_unit
+S1
+R0
+R11
+Z58 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_001.sv
+Z59 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_001.sv
+R54
+R5
+r1
+!s85 0
+31
+R6
+Z60 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_001.sv|
+Z61 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_001.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_001_default_decode
+R1
+R2
+!i10b 1
+!s100 zk2<i``SXAimU=6NVcQk@2
+IJ3Ha;R`=QBY]?]YKoMC[@0
+R3
+R57
+S1
+R0
+R11
+R58
+R59
+Z62 L0 45
+R5
+r1
+!s85 0
+31
+R6
+R60
+R61
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_002
+R1
+R2
+!i10b 1
+!s100 :P<n6P:6POJIPcjj^M@B<2
+IONX0kzV]UdS>^T>`SMldH1
+R3
+Z63 !s105 soc_system_mm_interconnect_0_router_002_sv_unit
+S1
+R0
+R11
+Z64 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_002.sv
+Z65 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_002.sv
+R54
+R5
+r1
+!s85 0
+31
+R6
+Z66 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_002.sv|
+Z67 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_002.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_002_default_decode
+R1
+R2
+!i10b 1
+!s100 hDK`6kz?6TXPT^I]J06Y32
+I5K?0XLLNQ@V1Pz:zk7T3f3
+R3
+R63
+S1
+R0
+R11
+R64
+R65
+R62
+R5
+r1
+!s85 0
+31
+R6
+R66
+R67
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_003
+R1
+R2
+!i10b 1
+!s100 ;k3MbiM:O`U9SE2oba_:23
+I8iT;NTZDeBCm3>n0ckkOZ2
+R3
+Z68 !s105 soc_system_mm_interconnect_0_router_003_sv_unit
+S1
+R0
+R11
+Z69 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_003.sv
+Z70 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_003.sv
+R54
+R5
+r1
+!s85 0
+31
+R6
+Z71 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_003.sv|
+Z72 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_003.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_003_default_decode
+R1
+R2
+!i10b 1
+!s100 Q1U5CJ?_j9G]>PJKABH8Q1
+IzdmjH1`1?]bbKIF1bQ_n@1
+R3
+R68
+S1
+R0
+R11
+R69
+R70
+R62
+R5
+r1
+!s85 0
+31
+R6
+R71
+R72
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_005
+R1
+R2
+!i10b 1
+!s100 :8UO1QGOY>8BfndzJo>AB2
+IeO72LhW<ig_W@;;iDA6jD0
+R3
+Z73 !s105 soc_system_mm_interconnect_0_router_005_sv_unit
+S1
+R0
+R11
+Z74 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_005.sv
+Z75 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_005.sv
+R54
+R5
+r1
+!s85 0
+31
+R6
+Z76 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_005.sv|
+Z77 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_005.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_005_default_decode
+R1
+R2
+!i10b 1
+!s100 d>Qi5m7@BIibjAAh[4EzJ2
+I@lo=ZTgE4fA2fT]9Zg?bm1
+R3
+R73
+S1
+R0
+R11
+R74
+R75
+R62
+R5
+r1
+!s85 0
+31
+R6
+R76
+R77
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_007
+R1
+R2
+!i10b 1
+!s100 I?zcP3:Zm0L=B6n5GP`e01
+IBT^HUT0i@UIC8Z:a_GQ;R0
+R3
+Z78 !s105 soc_system_mm_interconnect_0_router_007_sv_unit
+S1
+R0
+R11
+Z79 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_007.sv
+Z80 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_007.sv
+R54
+R5
+r1
+!s85 0
+31
+R13
+Z81 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_007.sv|
+Z82 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_007.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_007_default_decode
+R1
+R2
+!i10b 1
+!s100 cPckJH3Wza;nf^;i3?]Yb1
+IeKiE2:AzHf^mz1zHoGmKo0
+R3
+R78
+S1
+R0
+R11
+R79
+R80
+R62
+R5
+r1
+!s85 0
+31
+R13
+R81
+R82
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_008
+R1
+R10
+!i10b 1
+!s100 ;Uo@=cnTf9>C30=7;?=Jn3
+IW0M0cQNN;jIS0GHEGN02I1
+R3
+Z83 !s105 soc_system_mm_interconnect_0_router_008_sv_unit
+S1
+R0
+R11
+Z84 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_008.sv
+Z85 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_008.sv
+R54
+R5
+r1
+!s85 0
+31
+R13
+Z86 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_008.sv|
+Z87 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_008.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_008_default_decode
+R1
+R10
+!i10b 1
+!s100 WK`H6oMoPzTIX]k2_9NN@1
+ITQ4amgeK7j`Bn0?UcMmeA2
+R3
+R83
+S1
+R0
+R11
+R84
+R85
+R62
+R5
+r1
+!s85 0
+31
+R13
+R86
+R87
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_009
+R1
+R10
+!i10b 1
+!s100 5XX5=h78jQ@YC[d:N<1FM1
+IHKoL^FzfHFo=ZXN]eHzkd0
+R3
+Z88 !s105 soc_system_mm_interconnect_0_router_009_sv_unit
+S1
+R0
+R11
+Z89 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_009.sv
+Z90 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_009.sv
+R54
+R5
+r1
+!s85 0
+31
+R13
+Z91 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_009.sv|
+Z92 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_009.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_009_default_decode
+R1
+R10
+!i10b 1
+!s100 GjalmzhdJYjJbZlW2AHke1
+IB5G3`Q@ofz914Fid1hR1^1
+R3
+R88
+S1
+R0
+R11
+R89
+R90
+R62
+R5
+r1
+!s85 0
+31
+R13
+R91
+R92
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_010
+R1
+R10
+!i10b 1
+!s100 [XD^o`aS5n^fd@J0cllT73
+I3DJJGbo2mD8zYH^S>dPcj1
+R3
+Z93 !s105 soc_system_mm_interconnect_0_router_010_sv_unit
+S1
+R0
+R11
+Z94 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_010.sv
+Z95 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_010.sv
+R54
+R5
+r1
+!s85 0
+31
+R13
+Z96 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_010.sv|
+Z97 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_010.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_010_default_decode
+R1
+R10
+!i10b 1
+!s100 mEG014H=Iak5TcSiLMQ?R3
+IGY0T>IRf8WY=0g2`@m@Tg0
+R3
+R93
+S1
+R0
+R11
+R94
+R95
+R62
+R5
+r1
+!s85 0
+31
+R13
+R96
+R97
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_012
+R1
+R10
+!i10b 1
+!s100 NVeY?:a2EO_a?I3_CcMHa1
+IzQQblX501>1GV0Vh9=81J1
+R3
+Z98 !s105 soc_system_mm_interconnect_0_router_012_sv_unit
+S1
+R0
+R11
+Z99 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_012.sv
+Z100 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_012.sv
+R54
+R5
+r1
+!s85 0
+31
+R13
+Z101 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_012.sv|
+Z102 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_012.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_012_default_decode
+R1
+R10
+!i10b 1
+!s100 _@f4jUn`zMfPDk:Obi1K72
+I=32`caX=>Gi_F<::M9i`J0
+R3
+R98
+S1
+R0
+R11
+R99
+R100
+R62
+R5
+r1
+!s85 0
+31
+R13
+R101
+R102
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_013
+R1
+R10
+!i10b 1
+!s100 Ae7eYl<CQ4kCDEEK6;7zM2
+IP1E@IJi_QRi]SSf=60R962
+R3
+Z103 !s105 soc_system_mm_interconnect_0_router_013_sv_unit
+S1
+R0
+R11
+Z104 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_013.sv
+Z105 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_013.sv
+R54
+R5
+r1
+!s85 0
+31
+R13
+Z106 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_013.sv|
+Z107 !s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_013.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_013_default_decode
+R1
+R10
+!i10b 1
+!s100 RU6:O]k<DcQMA_B0K:ABF2
+I2WO`mAf=30I1Wo<7A@[@K1
+R3
+R103
+S1
+R0
+R11
+R104
+R105
+R62
+R5
+r1
+!s85 0
+31
+R13
+R106
+R107
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_router_default_decode
+R1
+R2
+!i10b 1
+!s100 da5IkNU;XN^dk=iIKL@@Q2
+IP7><JNZ_Rk2XB1Iaj>@ba0
+R3
+R51
+S1
+R0
+R11
+R52
+R53
+R62
+R5
+r1
+!s85 0
+31
+R6
+R55
+R56
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_demux
+R1
+R10
+!i10b 1
+!s100 >W7VTY1jbLom@E[mC>jKN2
+IYW[n9`Jl;7GjQW0Z]JAzZ1
+R3
+!s105 soc_system_mm_interconnect_0_rsp_demux_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_demux_001
+R1
+R10
+!i10b 1
+!s100 Z?m8h_[]L7g:6m:_?02gh3
+IYSlfJ3Y23_=@_TQSB@C2g1
+R3
+!s105 soc_system_mm_interconnect_0_rsp_demux_001_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_001.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_001.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_001.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_001.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_demux_002
+R1
+R10
+!i10b 1
+!s100 5abhdPI0V<e;]^Q?de6jW0
+INm>Q]mFClRHKiEQAB=k980
+R3
+!s105 soc_system_mm_interconnect_0_rsp_demux_002_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_002.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_002.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_002.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_002.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_demux_005
+R1
+R10
+!i10b 1
+!s100 ecSn=_c:G1[eSoA[Iea[a3
+I9`JI0CdgENX8UVIH=K3=I0
+R3
+!s105 soc_system_mm_interconnect_0_rsp_demux_005_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_005.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_005.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_005.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_005.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_demux_006
+R1
+R10
+!i10b 1
+!s100 >8Y9?`P0mEMKMYX=;;l8z0
+Ifb2CkX9FMHgO]>Dcfl1Vl3
+R3
+!s105 soc_system_mm_interconnect_0_rsp_demux_006_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_006.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_006.sv
+R49
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_006.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_demux_006.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_mux
+R1
+R10
+!i10b 1
+!s100 jNf`kMRK1W;ZWJSNm2kbE2
+I4iXUE;40k@mjhoMgfzEF?0
+R3
+!s105 soc_system_mm_interconnect_0_rsp_mux_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_mux_001
+R1
+R10
+!i10b 1
+!s100 H<m_5mQICdf:geCUXdgR43
+IOK]Ln26gDjK3I:G`?g9bK3
+R3
+!s105 soc_system_mm_interconnect_0_rsp_mux_001_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_001.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_001.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_001.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_001.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_mux_002
+R1
+R10
+!i10b 1
+!s100 M;=23<3o;[QQe4l[i?2XJ1
+IMA;0BQ`1Kc]Xj`Y`<UDgg1
+R3
+!s105 soc_system_mm_interconnect_0_rsp_mux_002_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_002.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_002.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_002.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_002.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_mm_interconnect_0_rsp_mux_003
+R1
+R10
+!i10b 1
+!s100 UR?GBW>QTLOAE3Y`HdEeC2
+IIJD>2_[gXP?FeIKU3akbf0
+R3
+!s105 soc_system_mm_interconnect_0_rsp_mux_003_sv_unit
+S1
+R0
+R11
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_003.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_003.sv
+R50
+R5
+r1
+!s85 0
+31
+R13
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_003.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_rsp_mux_003.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_nios2_gen2_0
+R16
+!i10b 1
+!s100 0@8X3UHU7VB8NLPnlWMo_2
+I5o52ZD7<6a[<>>=hG;g9:1
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect
+R1
+R2
+!i10b 1
+!s100 0DhD5<d@noPka<3mkiF=]2
+I6MNRVEiPc9EOY;K>KeSIh2
+R3
+!s105 soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect_sv_unit
+S1
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect.sv
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect.sv
+R27
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect.sv|
+!s90 -reportprogress|300|-sv|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect.sv|
+!i113 1
+R7
+R8
+R9
+vsoc_system_onchip_memory2_0
+R16
+!i10b 1
+!s100 fnz21IMoi;z:_z]Rb9M=>3
+IV1R=50FGb4MAm[@EodF592
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_onchip_memory2_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_onchip_memory2_0.v
+R12
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_onchip_memory2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_onchip_memory2_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_pll_0
+R16
+!i10b 1
+!s100 m1?R:IezfWRE7?CfYj=]_3
+IH`526zD_d1SMeB54B=z?S1
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_pll_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_pll_0.v
+L0 2
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_pll_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_pll_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_sdram_controller_0
+R16
+!i10b 1
+!s100 XFBDDSGdB?_]]8@MBl>el0
+IC8F79RF_7TRHOA8hN<3Kg3
+R3
+R0
+R19
+Z108 8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sdram_controller_0.v
+Z109 F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sdram_controller_0.v
+L0 159
+R5
+r1
+!s85 0
+31
+R17
+Z110 !s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sdram_controller_0.v|
+Z111 !s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sdram_controller_0.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_sdram_controller_0_input_efifo_module
+R16
+!i10b 1
+!s100 7V;8A5Tjgl=HkY2LAFY=32
+IVJO9]mEcg^adcmTdX5F6V0
+R3
+R0
+R19
+R108
+R109
+R12
+R5
+r1
+!s85 0
+31
+R17
+R110
+R111
+!i113 1
+R14
+R15
+R9
+vsoc_system_sysid
+R16
+!i10b 1
+!s100 Z?XZe0li[4MZm<JE9gfJa2
+I^dSSW5[o>54YCWHQePKh@0
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid.v
+R35
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid.v|
+!i113 1
+R14
+R15
+R9
+vsoc_system_sysid_qsys_0
+R16
+!i10b 1
+!s100 TfAF=llFoIm_ez=z<MZo@3
+IBnD:SWJbN8aA]I7A<m64A0
+R3
+R0
+R19
+8/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid_qsys_0.v
+F/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid_qsys_0.v
+R35
+R5
+r1
+!s85 0
+31
+R17
+!s107 /home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid_qsys_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|soc_system|+incdir+/home/kris/luacpu/hardware/soc_system/synthesis/submodules|/home/kris/luacpu/hardware/soc_system/synthesis/submodules/soc_system_sysid_qsys_0.v|
+!i113 1
+R14
+R15
+R9

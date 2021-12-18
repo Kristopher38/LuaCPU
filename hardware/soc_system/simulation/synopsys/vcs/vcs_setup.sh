@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 16.1 196 linux 2021.12.11.00:08:29
+# ACDS 18.1 625 linux 2021.12.16.01:19:54
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,12 +94,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 16.1 196 linux 2021.12.11.00:08:29
+# ACDS 18.1 625 linux 2021.12.16.01:19:54
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="soc_system"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="/home/kris/intelFPGA_lite/16.1/quartus/"
+QUARTUS_INSTALL_DIR="/home/kris/intelFPGA/18.1/quartus/"
 SKIP_FILE_COPY=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
@@ -129,6 +129,24 @@ fi
 
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
+if [ $SKIP_FILE_COPY -eq 0 ]; then
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_ociram_default_contents.hex ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_ociram_default_contents.dat ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_ociram_default_contents.mif ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_rf_ram_b.hex ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_rf_ram_b.dat ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_rf_ram_b.mif ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_rf_ram_a.hex ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_rf_ram_a.dat ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_rf_ram_a.mif ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_bht_ram.hex ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_bht_ram.dat ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_bht_ram.mif ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_ic_tag_ram.hex ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_ic_tag_ram.dat ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_ic_tag_ram.mif ./
+  cp -f $QSYS_SIMDIR/submodules/soc_system_onchip_memory2_0.hex ./
+fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.v \
@@ -143,6 +161,104 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclonev_hssi_atoms.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/synopsys/cyclonev_pcie_hip_atoms_ncrypt.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclonev_pcie_hip_atoms.v \
+  $QSYS_SIMDIR/submodules/verbosity_pkg.sv \
+  $QSYS_SIMDIR/submodules/avalon_utilities_pkg.sv \
+  $QSYS_SIMDIR/submodules/avalon_mm_pkg.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001_error_adapter_0.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_mm_slave_bfm.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_interrupt_sink.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_clock_source.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_reset_source.sv \
+  $QSYS_SIMDIR/submodules/soc_system_hps_0_hps_io_border_memory.sv \
+  $QSYS_SIMDIR/submodules/soc_system_hps_0_hps_io_border_hps_io.sv \
+  $QSYS_SIMDIR/submodules/soc_system_hps_0_hps_io_border.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_006.v \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_avalon_st_adapter_001.v \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_avalon_st_adapter.v \
+  $QSYS_SIMDIR/submodules/altera_avalon_st_handshake_clock_crosser.v \
+  $QSYS_SIMDIR/submodules/altera_avalon_st_clock_crosser.v \
+  $QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v \
+  $QSYS_SIMDIR/submodules/altera_std_synchronizer_nocut.v \
+  $QSYS_SIMDIR/submodules/altera_merlin_width_adapter.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_address_alignment.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_burst_uncompressor.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_mux_003.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_mux_002.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_mux_001.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_mux.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_demux_006.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_demux_005.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_demux_002.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_demux_001.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_rsp_demux.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_mux_006.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_mux_005.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_mux_003.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_mux_002.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_mux_001.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_mux.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_demux_003.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_demux_002.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_demux_001.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_cmd_demux.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_burst_adapter.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_burst_adapter_uncmpr.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_burst_adapter_13_1.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_burst_adapter_new.sv \
+  $QSYS_SIMDIR/submodules/altera_incr_burst_converter.sv \
+  $QSYS_SIMDIR/submodules/altera_wrap_burst_converter.sv \
+  $QSYS_SIMDIR/submodules/altera_default_burst_converter.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_stage.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_traffic_limiter.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_reorder_memory.sv \
+  $QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_013.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_012.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_010.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_009.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_008.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_007.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_005.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_003.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_002.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router_001.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0_router.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_slave_agent.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_axi_master_ni.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv \
+  $QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu.vo \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_debug_slave_wrapper.v \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_debug_slave_sysclk.v \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_debug_slave_tck.v \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_mult_cell.v \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_cpu_test_bench.v \
+  $QSYS_SIMDIR/submodules/soc_system_hps_0_hps_io.v \
+  $QSYS_SIMDIR/submodules/questa_mvc_svapi.svh \
+  $QSYS_SIMDIR/submodules/mgc_common_axi.sv \
+  $QSYS_SIMDIR/submodules/mgc_axi_master.sv \
+  $QSYS_SIMDIR/submodules/mgc_axi_slave.sv \
+  $QSYS_SIMDIR/submodules/soc_system_hps_0_fpga_interfaces.sv \
+  $QSYS_SIMDIR/submodules/altera_reset_controller.v \
+  $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
+  $QSYS_SIMDIR/submodules/soc_system_irq_mapper_002.sv \
+  $QSYS_SIMDIR/submodules/soc_system_irq_mapper_001.sv \
+  $QSYS_SIMDIR/submodules/soc_system_irq_mapper.sv \
+  $QSYS_SIMDIR/submodules/soc_system_mm_interconnect_0.v \
+  $QSYS_SIMDIR/submodules/altera_customins_slave_translator.sv \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0_custom_instruction_master_multi_xconnect.sv \
+  $QSYS_SIMDIR/submodules/altera_customins_master_translator.v \
+  $QSYS_SIMDIR/submodules/soc_system_sysid_qsys_0.v \
+  $QSYS_SIMDIR/submodules/soc_system_sysid.v \
+  $QSYS_SIMDIR/submodules/soc_system_sdram_controller_0.v \
+  $QSYS_SIMDIR/submodules/soc_system_pll_0.vo \
+  $QSYS_SIMDIR/submodules/soc_system_onchip_memory2_0.v \
+  $QSYS_SIMDIR/submodules/soc_system_nios2_gen2_0.v \
+  $QSYS_SIMDIR/submodules/lua_cpu.v \
   $QSYS_SIMDIR/submodules/soc_system_leds_0.v \
   $QSYS_SIMDIR/submodules/soc_system_jtag_uart.v \
   $QSYS_SIMDIR/submodules/soc_system_hps_0.v \

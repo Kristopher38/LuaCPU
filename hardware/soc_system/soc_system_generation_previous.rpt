@@ -1,133 +1,68 @@
-Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate /home/kris/luacpu/hardware/soc_system.qsys --block-symbol-file --output-directory=/home/kris/luacpu/hardware/soc_system --family="Cyclone V" --part=5CSEMA5F31C6
+Info: Starting: Create simulation model
+Info: qsys-generate /home/kris/luacpu/hardware/soc_system.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/kris/luacpu/hardware/soc_system/simulation --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading hardware/soc_system.qsys
 Progress: Reading input file
-Progress: Adding clk_0 [clock_source 16.1]
+Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding hps_0 [altera_hps 16.1]
+Progress: Adding hps_0 [altera_hps 18.1]
 Progress: Parameterizing module hps_0
-Progress: Adding jtag_uart [altera_avalon_jtag_uart 16.1]
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart
-Progress: Adding leds_0 [altera_avalon_pio 16.1]
+Progress: Adding leds_0 [altera_avalon_pio 18.1]
 Progress: Parameterizing module leds_0
 Progress: Adding lua_cpu_0 [lua_cpu 1.0]
 Progress: Parameterizing module lua_cpu_0
-Progress: Adding nios2_gen2_0 [altera_nios2_gen2 16.1]
+Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
 Progress: Parameterizing module nios2_gen2_0
-Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 16.1]
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 18.1]
 Progress: Parameterizing module onchip_memory2_0
-Progress: Adding pll_0 [altera_pll 16.1]
+Progress: Adding pll_0 [altera_pll 18.1]
 Progress: Parameterizing module pll_0
-Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 16.1]
+Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 18.1]
 Progress: Parameterizing module sdram_controller_0
-Progress: Adding sysid [altera_avalon_sysid_qsys 16.1]
+Progress: Adding sysid [altera_avalon_sysid_qsys 18.1]
 Progress: Parameterizing module sysid
-Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 16.1]
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 18.1]
 Progress: Parameterizing module sysid_qsys_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
-Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
-Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
-Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
-Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
-Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: soc_system.lua_cpu: The SIM_VERILOG fileset must specify the top-level module name.
 Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
 Warning: soc_system.pll_0: Able to implement PLL - Actual settings differ from Requested settings
 Info: soc_system.sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
-Info: soc_system.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
-Info: soc_system.sysid: Time stamp will be automatically updated when this component is generated.
 Info: soc_system.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: soc_system.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
-Info: qsys-generate succeeded.
-Info: Finished: Create block symbol file (.bsf)
-Info: 
-Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/kris/luacpu/hardware/soc_system.qsys --synthesis=VERILOG --output-directory=/home/kris/luacpu/hardware/soc_system/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading hardware/soc_system.qsys
-Progress: Reading input file
-Progress: Adding clk_0 [clock_source 16.1]
-Progress: Parameterizing module clk_0
-Progress: Adding hps_0 [altera_hps 16.1]
-Progress: Parameterizing module hps_0
-Progress: Adding jtag_uart [altera_avalon_jtag_uart 16.1]
-Progress: Parameterizing module jtag_uart
-Progress: Adding leds_0 [altera_avalon_pio 16.1]
-Progress: Parameterizing module leds_0
-Progress: Adding lua_cpu_0 [lua_cpu 1.0]
-Progress: Parameterizing module lua_cpu_0
-Progress: Adding nios2_gen2_0 [altera_nios2_gen2 16.1]
-Progress: Parameterizing module nios2_gen2_0
-Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 16.1]
-Progress: Parameterizing module onchip_memory2_0
-Progress: Adding pll_0 [altera_pll 16.1]
-Progress: Parameterizing module pll_0
-Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 16.1]
-Progress: Parameterizing module sdram_controller_0
-Progress: Adding sysid [altera_avalon_sysid_qsys 16.1]
-Progress: Parameterizing module sysid
-Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 16.1]
-Progress: Parameterizing module sysid_qsys_0
-Progress: Building connections
-Progress: Parameterizing connections
-Progress: Validating
-Progress: Done reading input file
-Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
-Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
-Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
-Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
-Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
-Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
-Warning: soc_system.pll_0: Able to implement PLL - Actual settings differ from Requested settings
-Info: soc_system.sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
-Info: soc_system.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
-Info: soc_system.sysid: Time stamp will be automatically updated when this component is generated.
-Info: soc_system.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
-Info: soc_system.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
-Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
-Info: Inserting clock-crossing logic between lua_cpu_0_avalon_master_to_sdram_controller_0_s1_cmd_width_adapter.src and cmd_mux.sink0
-Info: Inserting clock-crossing logic between nios2_gen2_0_data_master_to_sdram_controller_0_s1_cmd_width_adapter.src and cmd_mux.sink1
-Info: Inserting clock-crossing logic between nios2_gen2_0_instruction_master_to_sdram_controller_0_s1_cmd_width_adapter.src and cmd_mux.sink2
-Info: Inserting clock-crossing logic between sdram_controller_0_s1_to_lua_cpu_0_avalon_master_rsp_width_adapter.src and rsp_mux.sink0
-Info: Inserting clock-crossing logic between sdram_controller_0_s1_to_nios2_gen2_0_data_master_rsp_width_adapter.src and rsp_mux_001.sink0
-Info: Inserting clock-crossing logic between sdram_controller_0_s1_to_nios2_gen2_0_instruction_master_rsp_width_adapter.src and rsp_mux_002.sink0
-Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
-Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
-Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
-Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
+Info: soc_system: Generating soc_system "soc_system" for SIM_VERILOG
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
+Info: Inserting clock-crossing logic between cmd_demux_002.src0 and cmd_mux.sink2
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src2 and rsp_mux_002.sink0
 Warning: soc_system: "No matching role found for nios2_gen2_0_custom_instruction_master_translator:ci_slave:ci_slave_result (result)"
 Warning: soc_system: "No matching role found for nios2_gen2_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
 Warning: soc_system: "No matching role found for nios2_gen2_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
-Info: hps_0: "Running  for module: hps_0"
-Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
-Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
-Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
-Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
-Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt8971_6942307918408141760.dir/0001_jtag_uart_gen/ --quartus_dir=/home/kris/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt8971_6942307918408141760.dir/0001_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA/18.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt8976_3931862944003941921.dir/0002_jtag_uart_gen/ --quartus_dir=/home/kris/intelFPGA/18.1/quartus --verilog --config=/tmp/alt8976_3931862944003941921.dir/0002_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8976_3931862944003941921.dir/0002_jtag_uart_gen/  ]
 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: leds_0: Starting RTL generation for module 'soc_system_leds_0'
-Info: leds_0:   Generation command is [exec /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_leds_0 --dir=/tmp/alt8971_6942307918408141760.dir/0002_leds_0_gen/ --quartus_dir=/home/kris/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt8971_6942307918408141760.dir/0002_leds_0_gen//soc_system_leds_0_component_configuration.pl  --do_build_sim=0  ]
+Info: leds_0:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA/18.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_leds_0 --dir=/tmp/alt8976_3931862944003941921.dir/0003_leds_0_gen/ --quartus_dir=/home/kris/intelFPGA/18.1/quartus --verilog --config=/tmp/alt8976_3931862944003941921.dir/0003_leds_0_gen//soc_system_leds_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8976_3931862944003941921.dir/0003_leds_0_gen/  ]
 Info: leds_0: Done RTL generation for module 'soc_system_leds_0'
 Info: leds_0: "soc_system" instantiated altera_avalon_pio "leds_0"
 Info: lua_cpu_0: "soc_system" instantiated lua_cpu "lua_cpu_0"
 Info: nios2_gen2_0: "soc_system" instantiated altera_nios2_gen2 "nios2_gen2_0"
-Info: onchip_memory2_0: Starting RTL generation for module 'soc_system_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_onchip_memory2_0 --dir=/tmp/alt8971_6942307918408141760.dir/0004_onchip_memory2_0_gen/ --quartus_dir=/home/kris/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt8971_6942307918408141760.dir/0004_onchip_memory2_0_gen//soc_system_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
-Info: onchip_memory2_0: Done RTL generation for module 'soc_system_onchip_memory2_0'
-Info: onchip_memory2_0: "soc_system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: pll_0: Generating simgen model
+Info: pll_0: Info: ******************************************************************* Info: Running Quartus Prime Shell     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition     Info: Copyright (C) 2018  Intel Corporation. All rights reserved.     Info: Your use of Intel Corporation's design tools, logic functions      Info: and other software and tools, and its AMPP partner logic      Info: functions, and any output files from any of the foregoing      Info: (including device programming or simulation files), and any      Info: associated documentation or information are expressly subject      Info: to the terms and conditions of the Intel Program License      Info: Subscription Agreement, the Intel Quartus Prime License Agreement,     Info: the Intel FPGA IP License Agreement, or other applicable license     Info: agreement, including, without limitation, that your use is for     Info: the sole purpose of programming logic devices manufactured by     Info: Intel and sold by Intel or its authorized distributors.  Please     Info: refer to the applicable agreement for further details.     Info: Processing started: Thu Dec 16 00:47:19 2021 Info: Command: quartus_sh -t run_simgen_cmd.tcl Info: ******************************************************************* Info: Running Quartus Prime Analysis & Synthesis     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition     Info: Copyright (C) 2018  Intel Corporation. All rights reserved.     Info: Your use of Intel Corporation's design tools, logic functions      Info: and other software and tools, and its AMPP partner logic      Info: functions, and any output files from any of the foregoing      Info: (including device programming or simulation files), and any      Info: associated documentation or information are expressly subject      Info: to the terms and conditions of the Intel Program License      Info: Subscription Agreement, the Intel Quartus Prime License Agreement,     Info: the Intel FPGA IP License Agreement, or other applicable license     Info: agreement, including, without limitation, that your use is for     Info: the sole purpose of programming logic devices manufactured by     Info: Intel and sold by Intel or its authorized distributors.  Please     Info: refer to the applicable agreement for further details.     Info: Processing started: Thu Dec 16 00:47:19 2021 Info: Command: quartus_map soc_system_pll_0.qpf --simgen --ini=disable_check_quartus_compatibility_qsys_only=on --simgen_parameter=CBX_HDL_LANGUAGE=VERILOG Info (20034): Auto device selection is not supported for Cyclone V device family. The default device, 5CGXFC7C7F23C8, is set. Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance. Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected Info (12021): Found 1 design units, including 1 entities, in source file soc_system_pll_0.v     Info (12023): Found entity 1: soc_system_pll_0 File: /tmp/alt8976_3931862944003941921.dir/0005_pll_0_gen/soc_system_pll_0.v Line: 2 Info (12127): Elaborating entity "soc_system_pll_0" for the top level hierarchy Info (12128): Elaborating entity "altera_pll" for hierarchy "altera_pll:altera_pll_i" File: /tmp/alt8976_3931862944003941921.dir/0005_pll_0_gen/soc_system_pll_0.v Line: 91 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus Info (12130): Elaborated megafunction instantiation "altera_pll:altera_pll_i" File: /tmp/alt8976_3931862944003941921.dir/0005_pll_0_gen/soc_system_pll_0.v Line: 91 Info (12133): Instantiated megafunction "altera_pll:altera_pll_i" with the following parameter: File: /tmp/alt8976_3931862944003941921.dir/0005_pll_0_gen/soc_system_pll_0.v Line: 91     Info (12134): Parameter "fractional_vco_multiplier" = "false"     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"     Info (12134): Parameter "operation_mode" = "normal"     Info (12134): Parameter "number_of_clocks" = "3"     Info (12134): Parameter "output_clock_frequency0" = "50.000000 MHz"     Info (12134): Parameter "phase_shift0" = "0 ps"     Info (12134): Parameter "duty_cycle0" = "50"     Info (12134): Parameter "output_clock_frequency1" = "100.000000 MHz"     Info (12134): Parameter "phase_shift1" = "0 ps"     Info (12134): Parameter "duty_cycle1" = "50"     Info (12134): Parameter "output_clock_frequency2" = "100.000000 MHz"     Info (12134): Parameter "phase_shift2" = "-3750 ps"     Info (12134): Parameter "duty_cycle2" = "50"     Info (12134): Parameter "output_clock_frequency3" = "0 MHz"     Info (12134): Parameter "phase_shift3" = "0 ps"     Info (12134): Parameter "duty_cycle3" = "50"     Info (12134): Parameter "output_clock_frequency4" = "0 MHz"     Info (12134): Parameter "phase_shift4" = "0 ps"     Info (12134): Parameter "duty_cycle4" = "50"     Info (12134): Parameter "output_clock_frequency5" = "0 MHz"     Info (12134): Parameter "phase_shift5" = "0 ps"     Info (12134): Parameter "duty_cycle5" = "50"     Info (12134): Parameter "output_clock_frequency6" = "0 MHz"     Info (12134): Parameter "phase_shift6" = "0 ps"     Info (12134): Parameter "duty_cycle6" = "50"     Info (12134): Parameter "output_clock_frequency7" = "0 MHz"     Info (12134): Parameter "phase_shift7" = "0 ps"     Info (12134): Parameter "duty_cycle7" = "50"     Info (12134): Parameter "output_clock_frequency8" = "0 MHz"     Info (12134): Parameter "phase_shift8" = "0 ps"     Info (12134): Parameter "duty_cycle8" = "50"     Info (12134): Parameter "output_clock_frequency9" = "0 MHz"     Info (12134): Parameter "phase_shift9" = "0 ps"     Info (12134): Parameter "duty_cycle9" = "50"     Info (12134): Parameter "output_clock_frequency10" = "0 MHz"     Info (12134): Parameter "phase_shift10" = "0 ps"     Info (12134): Parameter "duty_cycle10" = "50"     Info (12134): Parameter "output_clock_frequency11" = "0 MHz"     Info (12134): Parameter "phase_shift11" = "0 ps"     Info (12134): Parameter "duty_cycle11" = "50"     Info (12134): Parameter "output_clock_frequency12" = "0 MHz"     Info (12134): Parameter "phase_shift12" = "0 ps"     Info (12134): Parameter "duty_cycle12" = "50"     Info (12134): Parameter "output_clock_frequency13" = "0 MHz"     Info (12134): Parameter "phase_shift13" = "0 ps"     Info (12134): Parameter "duty_cycle13" = "50"     Info (12134): Parameter "output_clock_frequency14" = "0 MHz"     Info (12134): Parameter "phase_shift14" = "0 ps"     Info (12134): Parameter "duty_cycle14" = "50"     Info (12134): Parameter "output_clock_frequency15" = "0 MHz"     Info (12134): Parameter "phase_shift15" = "0 ps"     Info (12134): Parameter "duty_cycle15" = "50"     Info (12134): Parameter "output_clock_frequency16" = "0 MHz"     Info (12134): Parameter "phase_shift16" = "0 ps"     Info (12134): Parameter "duty_cycle16" = "50"     Info (12134): Parameter "output_clock_frequency17" = "0 MHz"     Info (12134): Parameter "phase_shift17" = "0 ps"     Info (12134): Parameter "duty_cycle17" = "50"     Info (12134): Parameter "pll_type" = "General"     Info (12134): Parameter "pll_subtype" = "General" Info (281010): Generating sgate simulator netlist using Simgen SIMGEN_PROGRESS Start of Model generation -- 0% complete SIMGEN_PROGRESS Phase 1 : Internal Objects created -- 25% complete SIMGEN_PROGRESS Phase 2 : Connections between internal objects made -- 60% complete SIMGEN_PROGRESS Phase 3 : Netlist generated -- 100% complete Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning     Info: Peak virtual memory: 922 megabytes     Info: Processing ended: Thu Dec 16 00:47:25 2021     Info: Elapsed time: 00:00:06     Info: Total CPU time (on all processors): 00:00:14 Info (23030): Evaluation of Tcl script run_simgen_cmd.tcl was successful Info: Quartus Prime Shell was successful. 0 errors, 0 warnings     Info: Peak virtual memory: 741 megabytes     Info: Processing ended: Thu Dec 16 00:47:26 2021     Info: Elapsed time: 00:00:07     Info: Total CPU time (on all processors): 00:00:15
+Info: pll_0: Simgen was successful
 Info: pll_0: "soc_system" instantiated altera_pll "pll_0"
 Info: sdram_controller_0: Starting RTL generation for module 'soc_system_sdram_controller_0'
-Info: sdram_controller_0:   Generation command is [exec /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA_lite/16.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=soc_system_sdram_controller_0 --dir=/tmp/alt8971_6942307918408141760.dir/0006_sdram_controller_0_gen/ --quartus_dir=/home/kris/intelFPGA_lite/16.1/quartus --verilog --config=/tmp/alt8971_6942307918408141760.dir/0006_sdram_controller_0_gen//soc_system_sdram_controller_0_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller_0:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA/18.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=soc_system_sdram_controller_0 --dir=/tmp/alt8976_3931862944003941921.dir/0006_sdram_controller_0_gen/ --quartus_dir=/home/kris/intelFPGA/18.1/quartus --verilog --config=/tmp/alt8976_3931862944003941921.dir/0006_sdram_controller_0_gen//soc_system_sdram_controller_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8976_3931862944003941921.dir/0006_sdram_controller_0_gen/  ]
 Info: sdram_controller_0: Done RTL generation for module 'soc_system_sdram_controller_0'
 Info: sdram_controller_0: "soc_system" instantiated altera_avalon_new_sdram_controller "sdram_controller_0"
-Info: sysid: "soc_system" instantiated altera_avalon_sysid_qsys "sysid"
 Info: sysid_qsys_0: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
 Info: nios2_gen2_0_custom_instruction_master_translator: "soc_system" instantiated altera_customins_master_translator "nios2_gen2_0_custom_instruction_master_translator"
 Info: nios2_gen2_0_custom_instruction_master_multi_xconnect: "soc_system" instantiated altera_customins_xconnect "nios2_gen2_0_custom_instruction_master_multi_xconnect"
@@ -137,105 +72,272 @@ Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
-Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
-Info: irq_mapper_002: "soc_system" instantiated altera_irq_mapper "irq_mapper_002"
 Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
-Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
-Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
 Info: cpu: Starting RTL generation for module 'soc_system_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec /home/kris/intelFPGA_lite/16.1/quartus/linux64//eperlcmd -I /home/kris/intelFPGA_lite/16.1/quartus/linux64//perl/lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA_lite/16.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /home/kris/intelFPGA_lite/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=soc_system_nios2_gen2_0_cpu --dir=/tmp/alt8971_6942307918408141760.dir/0017_cpu_gen/ --quartus_bindir=/home/kris/intelFPGA_lite/16.1/quartus/linux64/ --verilog --config=/tmp/alt8971_6942307918408141760.dir/0017_cpu_gen//soc_system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2021.12.10 23:36:26 (*) Starting Nios II generation
-Info: cpu: # 2021.12.10 23:36:26 (*)   Checking for plaintext license.
-Info: cpu: # 2021.12.10 23:36:27 (*)   Couldn't query license setup in Quartus directory /home/kris/intelFPGA_lite/16.1/quartus/linux64/
-Info: cpu: # 2021.12.10 23:36:27 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2021.12.10 23:36:27 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2021.12.10 23:36:27 (*)   Plaintext license not found.
-Info: cpu: # 2021.12.10 23:36:27 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2021.12.10 23:36:27 (*)   Couldn't query license setup in Quartus directory /home/kris/intelFPGA_lite/16.1/quartus/linux64/
-Info: cpu: # 2021.12.10 23:36:27 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2021.12.10 23:36:27 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2021.12.10 23:36:27 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: cpu: # 2021.12.10 23:36:27 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2021.12.10 23:36:27 (*)   Creating all objects for CPU
-Info: cpu: # 2021.12.10 23:36:27 (*)     Testbench
-Info: cpu: # 2021.12.10 23:36:27 (*)     Instruction decoding
-Info: cpu: # 2021.12.10 23:36:27 (*)       Instruction fields
-Info: cpu: # 2021.12.10 23:36:27 (*)       Instruction decodes
-Info: cpu: # 2021.12.10 23:36:27 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2021.12.10 23:36:27 (*)       Instruction controls
-Info: cpu: # 2021.12.10 23:36:27 (*)     Pipeline frontend
-Info: cpu: # 2021.12.10 23:36:27 (*)     Pipeline backend
-Info: cpu: # 2021.12.10 23:36:29 (*)   Generating RTL from CPU objects
-Info: cpu: # 2021.12.10 23:36:29 (*)   Creating encrypted RTL
-Info: cpu: # 2021.12.10 23:36:30 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64//eperlcmd -I /home/kris/intelFPGA/18.1/quartus/linux64//perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=soc_system_nios2_gen2_0_cpu --dir=/tmp/alt8976_3931862944003941921.dir/0013_cpu_gen/ --quartus_bindir=/home/kris/intelFPGA/18.1/quartus/linux64/ --verilog --config=/tmp/alt8976_3931862944003941921.dir/0013_cpu_gen//soc_system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8976_3931862944003941921.dir/0013_cpu_gen/  ]
+Info: cpu: # 2021.12.16 00:47:28 (*) Starting Nios II generation
+Info: cpu: # 2021.12.16 00:47:28 (*)   Checking for plaintext license.
+Info: cpu: # 2021.12.16 00:47:28 (*)   Plaintext license not found.
+Info: cpu: # 2021.12.16 00:47:28 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2021.12.16 00:47:29 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2021.12.16 00:47:29 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2021.12.16 00:47:29 (*)   Creating all objects for CPU
+Info: cpu: # 2021.12.16 00:47:29 (*)     Testbench
+Info: cpu: # 2021.12.16 00:47:29 (*)     Instruction decoding
+Info: cpu: # 2021.12.16 00:47:29 (*)       Instruction fields
+Info: cpu: # 2021.12.16 00:47:29 (*)       Instruction decodes
+Info: cpu: # 2021.12.16 00:47:29 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2021.12.16 00:47:29 (*)       Instruction controls
+Info: cpu: # 2021.12.16 00:47:29 (*)     Pipeline frontend
+Info: cpu: # 2021.12.16 00:47:29 (*)     Pipeline backend
+Info: cpu: # 2021.12.16 00:47:30 (*)   Creating '/tmp/alt8976_3931862944003941921.dir/0013_cpu_gen//soc_system_nios2_gen2_0_cpu_nios2_waves.do'
+Info: cpu: # 2021.12.16 00:47:30 (*)   Generating RTL from CPU objects
+Info: cpu: # 2021.12.16 00:47:31 (*)   Creating encrypted RTL
+Info: cpu: # 2021.12.16 00:47:31 (*)   Creating IP functional simulation model
+Info: cpu: # 2021.12.16 00:47:41 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'soc_system_nios2_gen2_0_cpu'
 Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
 Info: lua_cpu_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "lua_cpu_0_avalon_master_translator"
 Info: sdram_controller_0_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "sdram_controller_0_s1_translator"
 Info: lua_cpu_0_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "lua_cpu_0_avalon_master_agent"
-Info: hps_0_h2f_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_axi_master_agent"
 Info: sdram_controller_0_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sdram_controller_0_s1_agent"
 Info: sdram_controller_0_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sdram_controller_0_s1_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
 Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
-Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
-Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
-Info: router_009: "mm_interconnect_0" instantiated altera_merlin_router "router_009"
-Info: router_010: "mm_interconnect_0" instantiated altera_merlin_router "router_010"
-Info: router_012: "mm_interconnect_0" instantiated altera_merlin_router "router_012"
-Info: router_013: "mm_interconnect_0" instantiated altera_merlin_router "router_013"
+Info: nios2_gen2_0_instruction_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_gen2_0_instruction_master_limiter"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_avalon_sc_fifo.v
+Info: sdram_controller_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_controller_0_s1_burst_adapter"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: sdram_controller_0_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_controller_0_s1_rsp_width_adapter"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_merlin_burst_uncompressor.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file /home/kris/luacpu/hardware/soc_system/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 45 modules, 84 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/kris/luacpu/hardware/soc_system/soc_system.spd --output-directory=/home/kris/luacpu/hardware/soc_system/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/kris/luacpu/hardware/soc_system/soc_system.spd --output-directory=/home/kris/luacpu/hardware/soc_system/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/kris/luacpu/hardware/soc_system/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/kris/luacpu/hardware/soc_system/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/kris/luacpu/hardware/soc_system/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/kris/luacpu/hardware/soc_system/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	43 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /home/kris/luacpu/hardware/soc_system/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/kris/luacpu/hardware/soc_system/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/kris/luacpu/hardware/soc_system.qsys --block-symbol-file --output-directory=/home/kris/luacpu/hardware/soc_system --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading hardware/soc_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding leds_0 [altera_avalon_pio 18.1]
+Progress: Parameterizing module leds_0
+Progress: Adding lua_cpu_0 [lua_cpu 1.0]
+Progress: Parameterizing module lua_cpu_0
+Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
+Progress: Parameterizing module nios2_gen2_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding pll_0 [altera_pll 18.1]
+Progress: Parameterizing module pll_0
+Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 18.1]
+Progress: Parameterizing module sdram_controller_0
+Progress: Adding sysid [altera_avalon_sysid_qsys 18.1]
+Progress: Parameterizing module sysid
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 18.1]
+Progress: Parameterizing module sysid_qsys_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: soc_system.lua_cpu: The SIM_VERILOG fileset must specify the top-level module name.
+Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Warning: soc_system.pll_0: Able to implement PLL - Actual settings differ from Requested settings
+Info: soc_system.sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: soc_system.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/kris/luacpu/hardware/soc_system.qsys --synthesis=VERILOG --output-directory=/home/kris/luacpu/hardware/soc_system/synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading hardware/soc_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding leds_0 [altera_avalon_pio 18.1]
+Progress: Parameterizing module leds_0
+Progress: Adding lua_cpu_0 [lua_cpu 1.0]
+Progress: Parameterizing module lua_cpu_0
+Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
+Progress: Parameterizing module nios2_gen2_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding pll_0 [altera_pll 18.1]
+Progress: Parameterizing module pll_0
+Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 18.1]
+Progress: Parameterizing module sdram_controller_0
+Progress: Adding sysid [altera_avalon_sysid_qsys 18.1]
+Progress: Parameterizing module sysid
+Progress: Adding sysid_qsys_0 [altera_avalon_sysid_qsys 18.1]
+Progress: Parameterizing module sysid_qsys_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Warning: soc_system.lua_cpu: The SIM_VERILOG fileset must specify the top-level module name.
+Info: soc_system.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Warning: soc_system.pll_0: Able to implement PLL - Actual settings differ from Requested settings
+Info: soc_system.sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: soc_system.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
+Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
+Info: Inserting clock-crossing logic between cmd_demux_002.src0 and cmd_mux.sink2
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src2 and rsp_mux_002.sink0
+Warning: soc_system: "No matching role found for nios2_gen2_0_custom_instruction_master_translator:ci_slave:ci_slave_result (result)"
+Warning: soc_system: "No matching role found for nios2_gen2_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
+Warning: soc_system: "No matching role found for nios2_gen2_0_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
+Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA/18.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt8976_3931862944003941921.dir/0043_jtag_uart_gen/ --quartus_dir=/home/kris/intelFPGA/18.1/quartus --verilog --config=/tmp/alt8976_3931862944003941921.dir/0043_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
+Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: leds_0: Starting RTL generation for module 'soc_system_leds_0'
+Info: leds_0:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA/18.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_leds_0 --dir=/tmp/alt8976_3931862944003941921.dir/0044_leds_0_gen/ --quartus_dir=/home/kris/intelFPGA/18.1/quartus --verilog --config=/tmp/alt8976_3931862944003941921.dir/0044_leds_0_gen//soc_system_leds_0_component_configuration.pl  --do_build_sim=0  ]
+Info: leds_0: Done RTL generation for module 'soc_system_leds_0'
+Info: leds_0: "soc_system" instantiated altera_avalon_pio "leds_0"
+Info: lua_cpu_0: "soc_system" instantiated lua_cpu "lua_cpu_0"
+Info: nios2_gen2_0: "soc_system" instantiated altera_nios2_gen2 "nios2_gen2_0"
+Info: pll_0: "soc_system" instantiated altera_pll "pll_0"
+Info: sdram_controller_0: Starting RTL generation for module 'soc_system_sdram_controller_0'
+Info: sdram_controller_0:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64/perl/bin/perl -I /home/kris/intelFPGA/18.1/quartus/linux64/perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=soc_system_sdram_controller_0 --dir=/tmp/alt8976_3931862944003941921.dir/0047_sdram_controller_0_gen/ --quartus_dir=/home/kris/intelFPGA/18.1/quartus --verilog --config=/tmp/alt8976_3931862944003941921.dir/0047_sdram_controller_0_gen//soc_system_sdram_controller_0_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller_0: Done RTL generation for module 'soc_system_sdram_controller_0'
+Info: sdram_controller_0: "soc_system" instantiated altera_avalon_new_sdram_controller "sdram_controller_0"
+Info: sysid_qsys_0: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
+Info: nios2_gen2_0_custom_instruction_master_translator: "soc_system" instantiated altera_customins_master_translator "nios2_gen2_0_custom_instruction_master_translator"
+Info: nios2_gen2_0_custom_instruction_master_multi_xconnect: "soc_system" instantiated altera_customins_xconnect "nios2_gen2_0_custom_instruction_master_multi_xconnect"
+Info: nios2_gen2_0_custom_instruction_master_multi_slave_translator0: "soc_system" instantiated altera_customins_slave_translator "nios2_gen2_0_custom_instruction_master_multi_slave_translator0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'soc_system_nios2_gen2_0_cpu'
+Info: cpu:   Generation command is [exec /home/kris/intelFPGA/18.1/quartus/linux64//eperlcmd -I /home/kris/intelFPGA/18.1/quartus/linux64//perl/lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/europa -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin/perl_lib -I /home/kris/intelFPGA/18.1/quartus/sopc_builder/bin -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /home/kris/intelFPGA/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=soc_system_nios2_gen2_0_cpu --dir=/tmp/alt8976_3931862944003941921.dir/0054_cpu_gen/ --quartus_bindir=/home/kris/intelFPGA/18.1/quartus/linux64/ --verilog --config=/tmp/alt8976_3931862944003941921.dir/0054_cpu_gen//soc_system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2021.12.16 00:47:50 (*) Starting Nios II generation
+Info: cpu: # 2021.12.16 00:47:50 (*)   Checking for plaintext license.
+Info: cpu: # 2021.12.16 00:47:50 (*)   Plaintext license not found.
+Info: cpu: # 2021.12.16 00:47:50 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2021.12.16 00:47:50 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2021.12.16 00:47:50 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2021.12.16 00:47:50 (*)   Creating all objects for CPU
+Info: cpu: # 2021.12.16 00:47:50 (*)     Testbench
+Info: cpu: # 2021.12.16 00:47:50 (*)     Instruction decoding
+Info: cpu: # 2021.12.16 00:47:50 (*)       Instruction fields
+Info: cpu: # 2021.12.16 00:47:50 (*)       Instruction decodes
+Info: cpu: # 2021.12.16 00:47:51 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2021.12.16 00:47:51 (*)       Instruction controls
+Info: cpu: # 2021.12.16 00:47:51 (*)     Pipeline frontend
+Info: cpu: # 2021.12.16 00:47:51 (*)     Pipeline backend
+Info: cpu: # 2021.12.16 00:47:52 (*)   Generating RTL from CPU objects
+Info: cpu: # 2021.12.16 00:47:53 (*)   Creating encrypted RTL
+Info: cpu: # 2021.12.16 00:47:53 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'soc_system_nios2_gen2_0_cpu'
+Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
+Info: lua_cpu_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "lua_cpu_0_avalon_master_translator"
+Info: sdram_controller_0_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "sdram_controller_0_s1_translator"
+Info: lua_cpu_0_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "lua_cpu_0_avalon_master_agent"
+Info: sdram_controller_0_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sdram_controller_0_s1_agent"
+Info: sdram_controller_0_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sdram_controller_0_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: nios2_gen2_0_instruction_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_gen2_0_instruction_master_limiter"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: sdram_controller_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_controller_0_s1_burst_adapter"
-Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
-Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
-Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: cmd_mux_005: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_005"
-Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: cmd_mux_006: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_006"
-Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
-Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
-Info: rsp_demux_005: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_005"
-Info: rsp_demux_006: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_006"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
-Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: lua_cpu_0_avalon_master_to_sdram_controller_0_s1_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "lua_cpu_0_avalon_master_to_sdram_controller_0_s1_cmd_width_adapter"
+Info: sdram_controller_0_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_controller_0_s1_rsp_width_adapter"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
 Info: Reusing file /home/kris/luacpu/hardware/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
-Info: avalon_st_adapter_006: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_006"
-Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter_006" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 69 modules, 143 files
+Info: soc_system: Done "soc_system" with 45 modules, 75 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

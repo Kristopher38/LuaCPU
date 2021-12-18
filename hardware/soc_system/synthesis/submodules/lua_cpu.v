@@ -100,34 +100,36 @@ module lua_cpu (
 			ci_u_l_savedpc_v <= 32'd0;
 			instruction <= 32'd0;
 		end else if (nios_clk_en) begin // is this really needed? different clock domain
-			if (!mem_wait) begin
-				case(ex_state)
-					EX_START: begin
-						if (nios_start)
-							ex_state <= EX_GET_PC;
-					end
-					EX_GET_PC: begin
+			case(ex_state)
+				EX_START: begin
+					if (nios_start)
+						ex_state <= EX_GET_PC;
+				end
+				EX_GET_PC: begin
+					if (!mem_wait) begin
 						ci_u_l_savedpc_v <= mem_rdata;
 						ex_state <= EX_WB_PC;
 					end
-					EX_WB_PC: begin
+				end
+				EX_WB_PC: begin
+					if (!mem_wait)
 						ex_state <= EX_FETCH_INSTR;
-					end
-					EX_FETCH_INSTR: begin
+				end
+				EX_FETCH_INSTR: begin
+					if (!mem_wait) begin
 						instruction <= mem_rdata;
 						//ex_state <= EX_FETCH_RA;
 						ex_state <= EX_FINISH;
 					end
-					EX_FETCH_RA: begin
-						
-					end
-					EX_FINISH: begin
-						if (nios_start)
-							ex_state <= EX_GET_PC;
-					end
-					default: begin end
-				endcase
-			end
+				end
+				EX_FETCH_RA: begin
+					
+				end
+				EX_FINISH: begin
+					ex_state <= EX_START;
+				end
+				default: begin end
+			endcase
 		end
 	end
 	
@@ -155,7 +157,7 @@ module lua_cpu (
 				mem_wdata = ci_u_l_savedpc_incr_v;
 			end
 			EX_FETCH_INSTR: begin
-				mem_addr = ci_u_l_savedpc_incr_v;
+				mem_addr = ci_u_l_savedpc_v;
 				mem_r = 1'd1;
 			end
 			EX_FETCH_RA: begin

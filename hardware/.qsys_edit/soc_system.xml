@@ -785,6 +785,11 @@
 										<placeholders>
 											<version>0</version>
 											<format>dock.PlaceholderList</format>
+											<entry>
+												<key shared="false">
+													<placeholder>dock.single.Messages</placeholder>
+												</key>
+											</entry>
 										</placeholders>
 									</content>
 								</delegate>
@@ -946,11 +951,18 @@
 																		</entry>
 																	</placeholder-map>
 																</leaf>
-																<leaf id="3" nodeId="1638994375057">
-																	<placeholders>
-																		<placeholder>dock.single.System\ Contents</placeholder>
-																	</placeholders>
-																</leaf>
+																<node nodeId="1639613913088" orientation="VERTICAL" divider="0.5639913232104121">
+																	<leaf id="1" nodeId="1638994375057">
+																		<placeholders>
+																			<placeholder>dock.single.System\ Contents</placeholder>
+																		</placeholders>
+																	</leaf>
+																	<leaf id="3" nodeId="1639613909207">
+																		<placeholders>
+																			<placeholder>dock.single.Messages</placeholder>
+																		</placeholders>
+																	</leaf>
+																</node>
 															</node>
 															<leaf id="-1" nodeId="1389812800464">
 																<placeholders>
@@ -992,19 +1004,13 @@
 														</leaf>
 													</node>
 												</node>
-												<leaf id="1" nodeId="1372710005745">
+												<leaf id="-1" nodeId="1372710005745">
 													<placeholders>
-														<placeholder>dock.single.Messages</placeholder>
 														<placeholder>dock.single.Generation\ Messages</placeholder>
 													</placeholders>
 													<placeholder-map>
 														<version>0</version>
 														<format>dock.PlaceholderList</format>
-														<entry>
-															<key shared="false">
-																<placeholder>dock.single.Messages</placeholder>
-															</key>
-														</entry>
 														<entry>
 															<key shared="false">
 																<placeholder>dock.single.Generation\ Messages</placeholder>
@@ -1034,10 +1040,10 @@
 									<children ignore="false"/>
 								</child>
 								<child>
-									<layout factory="predefined" placeholder="dock.single.Messages">
-										<replacement id="dockablesingle Messages"/>
+									<layout factory="predefined" placeholder="dock.single.System\ Contents">
+										<replacement id="dockablesingle System Contents"/>
 										<delegate id="delegate_ccontrol backup factory id">
-											<id>Messages</id>
+											<id>System Contents</id>
 											<area/>
 										</delegate>
 									</layout>
@@ -1103,10 +1109,10 @@
 									</children>
 								</child>
 								<child>
-									<layout factory="predefined" placeholder="dock.single.System\ Contents">
-										<replacement id="dockablesingle System Contents"/>
+									<layout factory="predefined" placeholder="dock.single.Messages">
+										<replacement id="dockablesingle Messages"/>
 										<delegate id="delegate_ccontrol backup factory id">
-											<id>System Contents</id>
+											<id>Messages</id>
 											<area/>
 										</delegate>
 									</layout>
@@ -1689,9 +1695,22 @@
 						</entry>
 						<entry id="single Messages" current="dock.mode.normal">
 							<history>
+								<mode>dock.mode.minimized</mode>
 								<mode>dock.mode.normal</mode>
 							</history>
 							<properties>
+								<property id="dock.mode.minimized">
+									<mode>dock.mode.minimized</mode>
+									<root>ccontrol south</root>
+									<location>
+										<property factory="flap dock">
+											<index>0</index>
+											<holding>false</holding>
+											<size>400</size>
+											<placeholder>dock.single.Messages</placeholder>
+										</property>
+									</location>
+								</property>
 								<property id="dock.mode.normal">
 									<mode>dock.mode.normal</mode>
 									<root>ccontrol center</root>
@@ -1699,9 +1718,14 @@
 										<property factory="SplitDockPlaceholderProperty">
 											<placeholder>dock.single.Messages</placeholder>
 											<backup-path>
-												<node location="RIGHT" size="0.8" id="1372710005721"/>
-												<node location="BOTTOM" size="0.25" id="1372710005725"/>
-												<leaf id="1372710005745"/>
+												<node location="RIGHT" size="0.7239520958083832" id="1372710005721"/>
+												<node location="TOP" size="0.75" id="1372710005725"/>
+												<node location="RIGHT" size="0.34834213690262505" id="1372710005727"/>
+												<node location="TOP" size="0.6704331450094162" id="1389812802503"/>
+												<node location="LEFT" size="0.7202473546556352" id="1638990620648"/>
+												<node location="BOTTOM" size="0.6324167872648336" id="1638994375058"/>
+												<node location="LEFT" size="0.3338870431893688" id="1639613909208"/>
+												<leaf id="1639613909207"/>
 											</backup-path>
 										</property>
 									</location>

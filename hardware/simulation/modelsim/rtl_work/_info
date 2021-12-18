@@ -1,0 +1,33 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/kris/luacpu/hardware/simulation/modelsim
+vHPS_LED_HEX
+!s110 1639669640
+!i10b 1
+!s100 =UAA5bCVG7cno7<8XDe[N1
+I_Ei;0DC2e@^ckNCEaOYi@3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1639613728
+8/home/kris/luacpu/hardware/HPS_LED_HEX.v
+F/home/kris/luacpu/hardware/HPS_LED_HEX.v
+L0 36
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1639669640.000000
+!s107 /home/kris/luacpu/hardware/HPS_LED_HEX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/kris/luacpu/hardware|/home/kris/luacpu/hardware/HPS_LED_HEX.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+/home/kris/luacpu/hardware
+tCvgOpt 0
+n@h@p@s_@l@e@d_@h@e@x

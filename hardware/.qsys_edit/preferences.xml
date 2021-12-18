@@ -8,6 +8,7 @@
    <name preferredWidth="235" />
    <inputclock preferredWidth="195" />
    <description preferredWidth="273" />
+   <export preferredWidth="212" />
   </columns>
  </systemtable>
  <clocktable>
@@ -18,6 +19,8 @@
   </columns>
  </clocktable>
  <window width="1684" height="1015" x="-2" y="0" />
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Library/Basic Functions/Clocks; PLLs and Resets/PLL,Library/Basic Functions/Clocks; PLLs and Resets,Library/Interface Protocols/Transceiver PLL,Library/Basic Functions,Project,Library/Interface Protocols,Library/University Program/Clock,Library/University Program,Library" />
  <hdlexample language="VERILOG" />
+ <generation simulation="VERILOG" />
 </preferences>
