@@ -89,8 +89,8 @@ assert(io.output():seek("end") == string.len("alo joao"))
 
 assert(io.output():seek("set") == 0)
 
-assert(io.write('"álo"', "{a}\n", "second line\n", "third line \n"))
-assert(io.write('çfourth_line'))
+assert(io.write('"ï¿½lo"', "{a}\n", "second line\n", "third line \n"))
+assert(io.write('ï¿½fourth_line'))
 io.output(io.stdout)
 collectgarbage()  -- file should be closed by GC
 assert(io.input() == io.stdin and rawequal(io.output(), io.stdout))
@@ -248,14 +248,14 @@ do  -- test error returns
 end
 checkerr("invalid format", io.read, "x")
 assert(io.read(0) == "")   -- not eof
-assert(io.read(5, 'l') == '"álo"')
+assert(io.read(5, 'l') == '"ï¿½lo"')
 assert(io.read(0) == "")
 assert(io.read() == "second line")
 local x = io.input():seek()
 assert(io.read() == "third line ")
 assert(io.input():seek("set", x))
 assert(io.read('L') == "third line \n")
-assert(io.read(1) == "ç")
+assert(io.read(1) == "ï¿½")
 assert(io.read(string.len"fourth_line") == "fourth_line")
 assert(io.input():seek("cur", -string.len"fourth_line"))
 assert(io.read() == "fourth_line")
@@ -640,7 +640,7 @@ if not _port then
     {"exit 129", "exit", 129},
     {"kill -s HUP $$", "signal", 1},
     {"kill -s KILL $$", "signal", 9},
-    {"sh -c 'kill -s HUP $$'", "exit"},
+    {"sh -c 'kill -s HUP $$'", "signal"},
     {progname .. ' -e " "', "ok"},
     {progname .. ' -e "os.exit(0, true)"', "ok"},
     {progname .. ' -e "os.exit(20, true)"', "exit", 20},

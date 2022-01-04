@@ -158,7 +158,7 @@ assert(dofile('calls.lua') == deep and deep)
 olddofile('strings.lua')
 olddofile('literals.lua')
 dofile('tpack.lua')
-assert(dofile('attrib.lua') == 27)
+--assert(dofile('attrib.lua') == 27)
 
 assert(dofile('locals.lua') == 5)
 dofile('constructs.lua')

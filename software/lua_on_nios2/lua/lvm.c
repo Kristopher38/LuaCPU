@@ -30,6 +30,9 @@
 #include "ltm.h"
 #include "lvm.h"
 
+#ifdef VERILATOR_SIM
+	#include "cpusim.h"
+#endif
 
 /* limit for table tag-method chains (to avoid loops) */
 #define MAXTAGLOOP	2000
@@ -754,7 +757,6 @@ void luaV_finishOp (lua_State *L) {
 
 /* fetch an instruction and prepare its execution */
 #define vmfetch()	{ \
-  /*i = *(ci->u.l.savedpc++);*/ \
   if (L->hookmask & (LUA_MASKLINE | LUA_MASKCOUNT)) \
     Protect(luaG_traceexec(L)); \
   ra = RA(i); /* WARNING: any stack reallocation invalidates 'ra' */ \
@@ -798,7 +800,14 @@ void luaV_execute (lua_State *L) {
   for (;;) {
     Instruction i;
     StkId ra;
-    i = (Instruction)ALT_CI_LUA_CPU_0(0, (void*)L, (void*)ci);
+#ifdef __NIOS2__
+    i = (Instruction)ALT_CI_LUA_EXEC(0, (void*)L, (void*)ci);
+#elif VERILATOR_SIM
+    i = (Instruction)luacpu_simulate(L, ci);
+    i = *(ci->u.l.savedpc++);
+#else
+    i = *(ci->u.l.savedpc++);
+#endif
     vmfetch();
     vmdispatch (GET_OPCODE(i)) {
       vmcase(OP_MOVE) {

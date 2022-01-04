@@ -1,0 +1,8 @@
+*.o
+*.a
+*.d
+software/lua_on_nios2/obj
+hardware/incremental_db
+hardware/db
+software/lua_on_nios2/lua
+software/lua_on_nios2/obj_dir/Vlua_cpu

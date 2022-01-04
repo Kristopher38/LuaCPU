@@ -57,6 +57,7 @@ MYCFLAGS= $(LOCAL) -std=c99 -DLUA_USE_LINUX -DLUA_COMPAT_5_2
 MYLDFLAGS= $(LOCAL) -Wl,-E
 MYLIBS= -ldl -lreadline
 
+VERLDFLAGS= $(CWARNS) -g -Wl,-E
 
 CC= gcc
 CFLAGS= -Wall -O2 $(MYCFLAGS)
@@ -122,6 +123,12 @@ echo:
 	@echo "MYLDFLAGS = $(MYLDFLAGS)"
 	@echo "MYLIBS = $(MYLIBS)"
 	@echo "DL = $(DL)"
+
+verilate:
+	VERILATOR_SIM="YES"
+	verilator -CFLAGS "$(CFLAGS)" -LDFLAGS "$(VERLDFLAGS) -Iobj_dir/ $(LIBS) $(MYLIBS)" --cc --build --exe ../../../hardware/lua_cpu.v *.c cpusim.cpp
+cleanver:
+	$(RM) *.o *.d obj_dir/*.o obj_dir/*.d
 
 $(ALL_O): makefile
 
