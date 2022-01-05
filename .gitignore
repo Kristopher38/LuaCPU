@@ -8,5 +8,7 @@ software/lua_on_nios2/lua/lua
 software/lua_on_nios2/lua/obj_dir/Vlua_cpu
 software/lua_on_nios2/lua/obj_dir/Vlua_cpu_*
 software/lua_on_nios2/lua/testes/time-debug.txt
+software/lua_on_nios2/lua/testes/time.txt
 .vscode/
 *.vcd
+.gdb_history

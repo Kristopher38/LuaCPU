@@ -1,4 +1,3 @@
-#include <queue>
 #include "cpusim.h"
 
 int32_t gTick = 0;
@@ -66,6 +65,7 @@ public:
 
 Vlua_cpu* cpu;
 SDRAMController* sdram;
+VerilatedVcdC* tfp;
 
 void luacpu_reset()
 {
@@ -80,41 +80,42 @@ void luacpu_reset()
 
 void luacpu_init(int argc, char** argv)
 {
-    Verilated::debug(0);
     Verilated::commandArgs(argc, argv);
     Verilated::traceEverOn(true);
     cpu = new Vlua_cpu;
     sdram = new SDRAMController;
+    tfp = new VerilatedVcdC;
+    cpu->trace(tfp, 99);
+    tfp->open("dump.vcd");
+
     luacpu_reset();
     gTick = 0;
 }
 
 void luacpu_deinit()
 {
-    cpu->final();
     delete cpu;
     delete sdram;
-    Verilated::flushCall();
-    Verilated::runFlushCallbacks();
+    tfp->close();
+    delete tfp;
 }
 
-inline void clk_half()
+inline void clk_half(int dir = -1)
 {
-    cpu->clock_sink_clk = cpu->clock_sink_clk == 0 ? 1 : 0;
+    cpu->clock_sink_clk = dir < 0 ? (cpu->clock_sink_clk == 0 ? 1 : 0) : dir;
     Verilated::timeInc(1);
     cpu->eval();
+    tfp->dump(Verilated::time());
 }
 
 inline void clk_up()
 {
-    cpu->clock_sink_clk = 1;
-    cpu->eval();
+    clk_half(1);
 }
 
 inline void clk_down()
 {
-    cpu->clock_sink_clk = 0;
-    cpu->eval();
+    clk_half(0);
 }
 
 inline void clk()
@@ -146,6 +147,6 @@ Instruction luacpu_simulate(lua_State* L, CallInfo* ci)
         clk();
         gTick++;
     }
-
+    tfp->flush();
     return cpu->nios_lua_exec_slave_result;
 }
