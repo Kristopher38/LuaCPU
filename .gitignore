@@ -4,7 +4,9 @@
 software/lua_on_nios2/obj
 hardware/incremental_db
 hardware/db
-software/lua_on_nios2/lua
-software/lua_on_nios2/obj_dir/Vlua_cpu
+software/lua_on_nios2/lua/lua
+software/lua_on_nios2/lua/obj_dir/Vlua_cpu
+software/lua_on_nios2/lua/obj_dir/Vlua_cpu_*
 software/lua_on_nios2/lua/testes/time-debug.txt
 .vscode/
+*.vcd
