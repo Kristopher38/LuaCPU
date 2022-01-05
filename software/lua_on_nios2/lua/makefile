@@ -128,7 +128,7 @@ verilate:
 	VERILATOR_SIM="YES"
 	verilator -CFLAGS "$(CFLAGS)" -LDFLAGS "$(VERLDFLAGS) -Iobj_dir/ $(LIBS) $(MYLIBS)" --cc --build --exe ../../../hardware/lua_cpu.v *.c cpusim.cpp
 cleanver:
-	$(RM) *.o *.d obj_dir/*.o obj_dir/*.d
+	$(RM) obj_dir/*.o obj_dir/*.d
 
 $(ALL_O): makefile
 

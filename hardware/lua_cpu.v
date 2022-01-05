@@ -82,6 +82,12 @@ module lua_cpu (
 	reg[17:0] Bx;
 	reg signed[17:0] sBx;
 	
+	initial begin
+		$dumpfile("dump.vcd");
+		$dumpvars();
+		$dumpon();
+	end
+
 	always @* begin
 		ci_u_l_p = ci + 32'd16;
 		ci_u_l_savedpc_p = ci_u_l_p + 32'd4;

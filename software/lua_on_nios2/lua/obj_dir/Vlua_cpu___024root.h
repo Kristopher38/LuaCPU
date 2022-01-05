@@ -8,12 +8,14 @@
 #include "verilated.h"
 
 class Vlua_cpu__Syms;
+class Vlua_cpu_lua_cpu;
+
 VL_MODULE(Vlua_cpu___024root) {
   public:
+    // CELLS
+    Vlua_cpu_lua_cpu* __PVT__lua_cpu;
 
     // DESIGN SPECIFIC STATE
-    VL_IN8(clock_sink_clk,0,0);
-    VL_IN8(reset_sink_reset,0,0);
     VL_IN8(nios_lua_exec_slave_clk,0,0);
     VL_IN8(nios_lua_exec_slave_clk_en,0,0);
     VL_IN8(nios_lua_exec_slave_start,0,0);
@@ -29,18 +31,19 @@ VL_MODULE(Vlua_cpu___024root) {
     VL_OUT8(avalon_master_read,0,0);
     VL_OUT8(avalon_master_write,0,0);
     VL_IN8(avalon_master_waitrequest,0,0);
-    CData/*3:0*/ lua_cpu__DOT__ex_state;
-    CData/*0:0*/ __Vclklast__TOP__clock_sink_clk;
-    CData/*0:0*/ __Vclklast__TOP__reset_sink_reset;
+    VL_IN8(clock_sink_clk,0,0);
+    VL_IN8(reset_sink_reset,0,0);
+    CData/*0:0*/ __VinpClk__TOP__lua_cpu____PVT__main_rst;
+    CData/*0:0*/ __Vclklast__TOP__lua_cpu____PVT__main_clk;
+    CData/*0:0*/ __Vclklast__TOP____VinpClk__TOP__lua_cpu____PVT__main_rst;
+    CData/*0:0*/ __Vchglast__TOP__lua_cpu__main_rst;
     VL_IN(nios_lua_exec_slave_dataa,31,0);
     VL_IN(nios_lua_exec_slave_datab,31,0);
     VL_OUT(nios_lua_exec_slave_result,31,0);
     VL_OUT(avalon_master_address,31,0);
     VL_IN(avalon_master_readdata,31,0);
     VL_OUT(avalon_master_writedata,31,0);
-    IData/*31:0*/ lua_cpu__DOT__ci_u_l_savedpc_v;
-    IData/*31:0*/ lua_cpu__DOT__instruction;
-    IData/*31:0*/ lua_cpu__DOT__ci_u_l_savedpc_p;
+    VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vlua_cpu__Syms* vlSymsp;  // Symbol table

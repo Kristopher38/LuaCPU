@@ -12,6 +12,9 @@
 
 class Vlua_cpu__Syms;
 class Vlua_cpu___024root;
+class VerilatedVcdC;
+class Vlua_cpu_lua_cpu;
+
 
 // This class is the main interface to the Verilated model
 class Vlua_cpu VL_NOT_FINAL {
@@ -24,8 +27,6 @@ class Vlua_cpu VL_NOT_FINAL {
     // PORTS
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
-    VL_IN8(&clock_sink_clk,0,0);
-    VL_IN8(&reset_sink_reset,0,0);
     VL_IN8(&nios_lua_exec_slave_clk,0,0);
     VL_IN8(&nios_lua_exec_slave_clk_en,0,0);
     VL_IN8(&nios_lua_exec_slave_start,0,0);
@@ -41,6 +42,8 @@ class Vlua_cpu VL_NOT_FINAL {
     VL_OUT8(&avalon_master_read,0,0);
     VL_OUT8(&avalon_master_write,0,0);
     VL_IN8(&avalon_master_waitrequest,0,0);
+    VL_IN8(&clock_sink_clk,0,0);
+    VL_IN8(&reset_sink_reset,0,0);
     VL_IN(&nios_lua_exec_slave_dataa,31,0);
     VL_IN(&nios_lua_exec_slave_datab,31,0);
     VL_OUT(&nios_lua_exec_slave_result,31,0);
@@ -51,6 +54,7 @@ class Vlua_cpu VL_NOT_FINAL {
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
+    Vlua_cpu_lua_cpu* const __PVT__lua_cpu;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.
@@ -71,14 +75,16 @@ class Vlua_cpu VL_NOT_FINAL {
   public:
     // API METHODS
     /// Evaluate the model.  Application must call when inputs change.
-    void eval() { eval_step(); }
+    void eval() { eval_step(); eval_end_step(); }
     /// Evaluate when calling multiple units/models per time step.
     void eval_step();
     /// Evaluate at end of a timestep for tracing, when using eval_step().
     /// Application must call after all eval() and before time changes.
-    void eval_end_step() {}
+    void eval_end_step();
     /// Simulation complete, run final blocks.  Application must call on completion.
     void final();
+    /// Trace signals in the model; called by application code
+    void trace(VerilatedVcdC* tfp, int levels, int options = 0);
     /// Return current simulation context for this model.
     /// Used to get to e.g. simulation time via contextp()->time()
     VerilatedContext* contextp() const;

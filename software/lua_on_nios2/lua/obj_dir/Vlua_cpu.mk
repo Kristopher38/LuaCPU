@@ -35,11 +35,11 @@ VM_PREFIX = Vlua_cpu
 VM_MODPREFIX = Vlua_cpu
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
-	-DLUA_USE_LINUX -DLUA_COMPAT_5_2 -DVERILATOR_SIM \
+	-DLUA_USE_LINUX -DLUA_COMPAT_5_2 -DVERILATOR_SIM -g -m32 -march=i386 \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-	-Wl,-E -Iobj_dir/ -lm -ldl -lreadline \
+	-Wl,-E -Iobj_dir/ -lm -ldl -lreadline -m32 \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \

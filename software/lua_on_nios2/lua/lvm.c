@@ -804,7 +804,6 @@ void luaV_execute (lua_State *L) {
     i = (Instruction)ALT_CI_LUA_EXEC(0, (void*)L, (void*)ci);
 #elif VERILATOR_SIM
     i = (Instruction)luacpu_simulate(L, ci);
-    i = *(ci->u.l.savedpc++);
 #else
     i = *(ci->u.l.savedpc++);
 #endif

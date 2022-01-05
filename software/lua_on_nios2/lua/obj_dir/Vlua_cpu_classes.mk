@@ -14,7 +14,7 @@ VM_PARALLEL_BUILDS = 0
 # Threaded output mode?  0/1/N threads (from --threads)
 VM_THREADS = 0
 # Tracing output mode?  0/1 (from --trace/--trace-fst)
-VM_TRACE = 0
+VM_TRACE = 1
 # Tracing output mode in FST format?  0/1 (from --trace-fst)
 VM_TRACE_FST = 0
 # Tracing threaded output mode?  0/1/N threads (from --trace-thread)
@@ -26,23 +26,32 @@ VM_TRACE_FST_WRITER_THREAD = 0
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
 	Vlua_cpu \
+	Vlua_cpu___024root__DepSet_h75aabfd9__0 \
 	Vlua_cpu___024root__DepSet_hb28ee624__0 \
+	Vlua_cpu_lua_cpu__DepSet_hae8ff35e__0 \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	Vlua_cpu___024root__Slow \
+	Vlua_cpu___024root__DepSet_h75aabfd9__0__Slow \
 	Vlua_cpu___024root__DepSet_hb28ee624__0__Slow \
+	Vlua_cpu_lua_cpu__Slow \
+	Vlua_cpu_lua_cpu__DepSet_h79aba893__0__Slow \
+	Vlua_cpu_lua_cpu__DepSet_hae8ff35e__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
+	Vlua_cpu__Trace__0 \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
 VM_SUPPORT_SLOW += \
 	Vlua_cpu__Syms \
+	Vlua_cpu__Trace__0__Slow \
 
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \
 	verilated \
+	verilated_vcd_c \
 
 # Global classes, need linked once per executable, non-fast-path, compile with low/medium optimization
 VM_GLOBAL_SLOW += \

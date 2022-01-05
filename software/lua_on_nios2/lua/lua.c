@@ -18,7 +18,9 @@
 #include "lauxlib.h"
 #include "lualib.h"
 
-
+#ifdef VERILATOR_SIM
+  #include "cpusim.h"
+#endif
 
 #if !defined(LUA_PROMPT)
 #define LUA_PROMPT		"> "
@@ -599,6 +601,8 @@ int main (int argc, char **argv) {
   char** overriden_argv[2][1] = {{&lua_name}, {NULL}};
   argv = overriden_argv;
   argc = 1;
+#elif VERILATOR_SIM
+  luacpu_init(argc, argv);
 #endif
   lua_State *L = luaL_newstate();  /* create state */
   if (L == NULL) {
@@ -612,6 +616,9 @@ int main (int argc, char **argv) {
   result = lua_toboolean(L, -1);  /* get result */
   report(L, status);
   lua_close(L);
+#if VERILATOR_SIM
+  luacpu_deinit();
+#endif
   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
