@@ -121,14 +121,6 @@ void Vlua_cpu::eval_step() {
     // Evaluate cleanup
 }
 
-void Vlua_cpu::eval_end_step() {
-    VL_DEBUG_IF(VL_DBG_MSGF("+eval_end_step Vlua_cpu::eval_end_step\n"); );
-#ifdef VM_TRACE
-    // Tracing
-    if (VL_UNLIKELY(vlSymsp->__Vm_dumping)) vlSymsp->_traceDump();
-#endif  // VM_TRACE
-}
-
 //============================================================
 // Utilities
 

@@ -16,7 +16,7 @@ class SDRAMController
 private:
     std::queue<Request> pendingRequests;
     const int32_t requestDelayFull = 3;
-    bool ignoreNextRequest = true;
+    bool canService = true;
 public:
     uint32_t address;
     uint32_t readdata;
@@ -30,6 +30,7 @@ public:
 
     void queueRequest(uint32_t address, bool isWrite, uint32_t writedata)
     {
+        canService = false;
         pendingRequests.push(Request{address, writedata, isWrite, gTick, requestDelayFull});
     }
 
@@ -38,16 +39,24 @@ public:
         if (pendingRequests.size() > 0)
         {
             Request r = pendingRequests.front();
-            if (r.issuedTick + r.delay <= gTick)
+            if (r.issuedTick + r.delay == gTick)
             {
-                waitrequest = 0;
+                // first read data is put on the bus before waitrequest is deasserted
+                // (contrary to what the avalon specs say)
                 int32_t* ptr = reinterpret_cast<int32_t*>(r.address);
                 if (r.isWrite)
                     *ptr = r.writedata;
                 else
                     readdata = *ptr;
+            }
+            if (r.issuedTick + r.delay + 1 == gTick)
+                waitrequest = 0;
+            if (r.issuedTick + r.delay + 2 == gTick)
+            {
+                // transfer done one cycle after waitrequest is deasserted,
+                // then we can start servicing next request
+                canService = true;
                 pendingRequests.pop();
-                ignoreNextRequest = true;
             }
         }
     }
@@ -55,10 +64,8 @@ public:
     void clock()
     {
         waitrequest = 1;
-        if ((read || write) && pendingRequests.size() == 0 && !ignoreNextRequest)
+        if ((read || write) && canService)
             this->queueRequest(address, write, writedata);
-        else
-            ignoreNextRequest = false;
         this->serviceRequest();
     }
 };
@@ -126,6 +133,7 @@ inline void clk()
 
 Instruction luacpu_simulate(lua_State* L, CallInfo* ci)
 {
+    cpu->avalon_master_waitrequest = 1;
     cpu->nios_lua_exec_slave_start = 1;
     cpu->nios_lua_exec_slave_clk_en = 1;
     cpu->clock_sink_clk = 0;
