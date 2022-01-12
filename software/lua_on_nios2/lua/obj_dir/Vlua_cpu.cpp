@@ -80,7 +80,7 @@ static void _eval_initial_loop(Vlua_cpu__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = Vlua_cpu___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("../../../hardware/lua_cpu.v", 4, "",
+            VL_FATAL_MT("../../../hardware/lua_cpu.v", 318, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -111,7 +111,7 @@ void Vlua_cpu::eval_step() {
             Verilated::debug(1);
             __Vchange = Vlua_cpu___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("../../../hardware/lua_cpu.v", 4, "",
+            VL_FATAL_MT("../../../hardware/lua_cpu.v", 318, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {

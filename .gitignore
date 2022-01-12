@@ -12,3 +12,4 @@ software/lua_on_nios2/lua/testes/time.txt
 .vscode/
 *.vcd
 .gdb_history
+*.code-workspace
