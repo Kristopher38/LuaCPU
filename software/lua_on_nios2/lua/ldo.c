@@ -164,8 +164,11 @@ static void correctstack (lua_State *L, TValue *oldstack) {
   for (ci = L->ci; ci != NULL; ci = ci->previous) {
     ci->top = (ci->top - oldstack) + L->stack;
     ci->func = (ci->func - oldstack) + L->stack;
-    if (isLua(ci))
-      ci->u.l.base = (ci->u.l.base - oldstack) + L->stack;
+    if (isLua(ci)) {
+      StkId newbase = (ci->u.l.base - oldstack) + L->stack;
+      ci->u.l.base = newbase;
+      ALT_CI_LUA_STOREBASE(newbase);
+    }
   }
 }
 
@@ -297,6 +300,7 @@ static StkId adjust_varargs (lua_State *L, Proto *p, int actual) {
   /* move fixed parameters to final position */
   fixed = L->top - actual;  /* first fixed argument */
   base = L->top;  /* final position of first argument */
+  ALT_CI_LUA_STOREBASE(base);
   for (i = 0; i < nfixargs && i < actual; i++) {
     setobjs2s(L, L->top++, fixed + i);
     setnilvalue(fixed + i);  /* erase original copy (for GC) */
@@ -454,6 +458,8 @@ int luaD_precall (lua_State *L, StkId func, int nresults) {
       ci->nresults = nresults;
       ci->func = func;
       ci->u.l.base = base;
+      // no need to ALT_CI_LUA_STOREBASE(base) - will get called in luaV_execute, either by Protect() or at the beginning
+      // (luaD_precall is always either in luaV_execute and then Protect() is called, or goes straight to the beginning of luaV_execute)
       L->top = ci->top = base + fsize;
       lua_assert(ci->top <= L->stack_last);
       ci->u.l.savedpc = p->code;  /* starting point */

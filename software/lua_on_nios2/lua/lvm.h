@@ -12,12 +12,8 @@
 #include "lobject.h"
 #include "ltm.h"
 
-#ifdef __NIOS2__
-	#include "system.h"
-	#define ALT_CI_LUA_EXEC(n,A,B) __builtin_custom_inpp(ALT_CI_LUA_CPU_0_N+(n&ALT_CI_LUA_CPU_0_N_MASK),(A),(B))
-#else
+#include "common.h"
 
-#endif
 
 #if !defined(LUA_NOCVTN2S)
 #define cvt2str(o)	ttisnumber(o)

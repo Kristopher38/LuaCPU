@@ -181,7 +181,6 @@ C_SRCS += lua/testes/libs/lib11.c
 C_SRCS += lua/testes/libs/lib2.c
 C_SRCS += lua/testes/libs/lib21.c
 C_SRCS += lua/lua.c
-CXX_SRCS :=
 ASM_SRCS :=
 
 

@@ -49,7 +49,7 @@ module soc_system_sysid (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1639613961 : 2899645186;
+  assign readdata = address ? 1642075676 : 2899645186;
 
 endmodule
 

@@ -89,6 +89,7 @@ module soc_system_mm_interconnect_0 (
 		output wire         lua_cpu_0_avalon_master_waitrequest,                              //                                                           .waitrequest
 		input  wire         lua_cpu_0_avalon_master_read,                                     //                                                           .read
 		output wire [31:0]  lua_cpu_0_avalon_master_readdata,                                 //                                                           .readdata
+		output wire         lua_cpu_0_avalon_master_readdatavalid,                            //                                                           .readdatavalid
 		input  wire         lua_cpu_0_avalon_master_write,                                    //                                                           .write
 		input  wire [31:0]  lua_cpu_0_avalon_master_writedata,                                //                                                           .writedata
 		input  wire [30:0]  nios2_gen2_0_data_master_address,                                 //                                   nios2_gen2_0_data_master.address
@@ -1044,7 +1045,7 @@ module soc_system_mm_interconnect_0 (
 		.USE_BEGINTRANSFER           (0),
 		.USE_CHIPSELECT              (0),
 		.USE_BURSTCOUNT              (0),
-		.USE_READDATAVALID           (0),
+		.USE_READDATAVALID           (1),
 		.USE_WAITREQUEST             (1),
 		.USE_READRESPONSE            (0),
 		.USE_WRITERESPONSE           (0),
@@ -1073,6 +1074,7 @@ module soc_system_mm_interconnect_0 (
 		.av_waitrequest         (lua_cpu_0_avalon_master_waitrequest),                                        //                          .waitrequest
 		.av_read                (lua_cpu_0_avalon_master_read),                                               //                          .read
 		.av_readdata            (lua_cpu_0_avalon_master_readdata),                                           //                          .readdata
+		.av_readdatavalid       (lua_cpu_0_avalon_master_readdatavalid),                                      //                          .readdatavalid
 		.av_write               (lua_cpu_0_avalon_master_write),                                              //                          .write
 		.av_writedata           (lua_cpu_0_avalon_master_writedata),                                          //                          .writedata
 		.av_burstcount          (1'b1),                                                                       //               (terminated)
@@ -1080,7 +1082,6 @@ module soc_system_mm_interconnect_0 (
 		.av_beginbursttransfer  (1'b0),                                                                       //               (terminated)
 		.av_begintransfer       (1'b0),                                                                       //               (terminated)
 		.av_chipselect          (1'b0),                                                                       //               (terminated)
-		.av_readdatavalid       (),                                                                           //               (terminated)
 		.av_lock                (1'b0),                                                                       //               (terminated)
 		.av_debugaccess         (1'b0),                                                                       //               (terminated)
 		.uav_clken              (),                                                                           //               (terminated)

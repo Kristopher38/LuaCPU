@@ -1,5 +1,5 @@
 
-# (C) 2001-2021 Altera Corporation. All rights reserved.
+# (C) 2001-2022 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions and 
 # other software and tools, and its AMPP partner logic functions, and 
 # any output files any of the foregoing (including device programming 
@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 linux 2021.12.16.01:19:54
+# ACDS 18.1 625 linux 2022.01.13.13:08:29
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------

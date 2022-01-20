@@ -15,6 +15,7 @@
 #include "llimits.h"
 #include "lua.h"
 
+#include "common.h"
 
 /*
 ** Extra tags for non-values
@@ -192,64 +193,68 @@ typedef struct lua_TValue {
 		(righttt(obj) && (L == NULL || !isdead(G(L),gcvalue(obj)))))
 
 
-/* Macros to set values */
-#define settt_(o,t)	((o)->tt_=(t))
+// /* Macros to set values */
+#ifdef __NIOS2__
+  #define settt_(reg,t) { ((reg)->tt_=(t)); ALT_CI_LUA_STORETT((reg), (t)); }
+#else
+  #define settt_(o,t) ((o)->tt_=(t))
+#endif
 
 #define setfltvalue(obj,x) \
-  { TValue *io=(obj); val_(io).n=(x); settt_(io, LUA_TNUMFLT); }
+  { TValue *io=(obj); val_(io).n=(x); ALT_CI_LUA_STOREVALF((io), (x)); settt_(io, LUA_TNUMFLT); }
 
 #define chgfltvalue(obj,x) \
-  { TValue *io=(obj); lua_assert(ttisfloat(io)); val_(io).n=(x); }
+  { TValue *io=(obj); lua_assert(ttisfloat(io)); val_(io).n=(x); ALT_CI_LUA_STOREVALF((io), (x)); }
 
 #define setivalue(obj,x) \
-  { TValue *io=(obj); val_(io).i=(x); settt_(io, LUA_TNUMINT); }
+  { TValue *io=(obj); val_(io).i=(x); settt_(io, LUA_TNUMINT); ALT_CI_LUA_STOREVALI((io), (x)); }
 
 #define chgivalue(obj,x) \
-  { TValue *io=(obj); lua_assert(ttisinteger(io)); val_(io).i=(x); }
+  { TValue *io=(obj); lua_assert(ttisinteger(io)); val_(io).i=(x); ALT_CI_LUA_STOREVALI((io), (x)); }
 
 #define setnilvalue(obj) settt_(obj, LUA_TNIL)
 
 #define setfvalue(obj,x) \
-  { TValue *io=(obj); val_(io).f=(x); settt_(io, LUA_TLCF); }
+  { TValue *io=(obj); val_(io).f=(x); ALT_CI_LUA_STOREVALP((io), (x)); settt_(io, LUA_TLCF); }
 
 #define setpvalue(obj,x) \
-  { TValue *io=(obj); val_(io).p=(x); settt_(io, LUA_TLIGHTUSERDATA); }
+  { TValue *io=(obj); val_(io).p=(x); ALT_CI_LUA_STOREVALP((io), (x)); settt_(io, LUA_TLIGHTUSERDATA); }
 
 #define setbvalue(obj,x) \
-  { TValue *io=(obj); val_(io).b=(x); settt_(io, LUA_TBOOLEAN); }
+  { TValue *io=(obj); val_(io).b=(x); ALT_CI_LUA_STOREVALI((io), (x)); settt_(io, LUA_TBOOLEAN); }
 
 #define setgcovalue(L,obj,x) \
   { TValue *io = (obj); GCObject *i_g=(x); \
-    val_(io).gc = i_g; settt_(io, ctb(i_g->tt)); }
+    val_(io).gc = i_g; ALT_CI_LUA_STOREVALP((io), (i_g)); settt_(io, ctb(i_g->tt)); }
 
 #define setsvalue(L,obj,x) \
   { TValue *io = (obj); TString *x_ = (x); \
-    val_(io).gc = obj2gco(x_); settt_(io, ctb(x_->tt)); \
+    val_(io).gc = obj2gco(x_); ALT_CI_LUA_STOREVALP((io), obj2gco(x_)); settt_(io, ctb(x_->tt)); \
     checkliveness(L,io); }
 
 #define setuvalue(L,obj,x) \
   { TValue *io = (obj); Udata *x_ = (x); \
-    val_(io).gc = obj2gco(x_); settt_(io, ctb(LUA_TUSERDATA)); \
+    val_(io).gc = obj2gco(x_); ALT_CI_LUA_STOREVALP((io), obj2gco(x_)); settt_(io, ctb(LUA_TUSERDATA)); \
     checkliveness(L,io); }
 
 #define setthvalue(L,obj,x) \
   { TValue *io = (obj); lua_State *x_ = (x); \
-    val_(io).gc = obj2gco(x_); settt_(io, ctb(LUA_TTHREAD)); \
+    val_(io).gc = obj2gco(x_); ALT_CI_LUA_STOREVALP((io), obj2gco(x_)); settt_(io, ctb(LUA_TTHREAD)); \
     checkliveness(L,io); }
 
 #define setclLvalue(L,obj,x) \
   { TValue *io = (obj); LClosure *x_ = (x); \
-    val_(io).gc = obj2gco(x_); settt_(io, ctb(LUA_TLCL)); \
+    val_(io).gc = obj2gco(x_); ALT_CI_LUA_STOREVALP((io), obj2gco(x_)); settt_(io, ctb(LUA_TLCL)); \
     checkliveness(L,io); }
 
 #define setclCvalue(L,obj,x) \
   { TValue *io = (obj); CClosure *x_ = (x); \
-    val_(io).gc = obj2gco(x_); settt_(io, ctb(LUA_TCCL)); \
+    val_(io).gc = obj2gco(x_); ALT_CI_LUA_STOREVALP((io), obj2gco(x_)); settt_(io, ctb(LUA_TCCL)); \
     checkliveness(L,io); }
 
 #define sethvalue(L,obj,x) \
   { TValue *io = (obj); Table *x_ = (x); \
-    val_(io).gc = obj2gco(x_); settt_(io, ctb(LUA_TTABLE)); \
+    val_(io).gc = obj2gco(x_); ALT_CI_LUA_STOREVALP((io), obj2gco(x_)); settt_(io, ctb(LUA_TTABLE)); \
     checkliveness(L,io); }
 
 #define setdeadvalue(obj)	settt_(obj, LUA_TDEADKEY)
@@ -258,6 +263,8 @@ typedef struct lua_TValue {
 
 #define setobj(L,obj1,obj2) \
 	{ TValue *io1=(obj1); *io1 = *(obj2); \
+    ALT_CI_LUA_STOREVAL((io1), ((obj2)->value_)); \
+    ALT_CI_LUA_STORETT((io1), ((obj2)->tt_)); \
 	  (void)L; checkliveness(L,io1); }
 
 

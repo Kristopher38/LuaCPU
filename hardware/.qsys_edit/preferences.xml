@@ -20,7 +20,7 @@
  </clocktable>
  <window width="1684" height="1015" x="-2" y="0" />
  <library
-   expandedCategories="Library/Basic Functions/Clocks; PLLs and Resets/PLL,Library/Basic Functions/Clocks; PLLs and Resets,Library/Interface Protocols/Transceiver PLL,Library/Basic Functions,Project,Library/Interface Protocols,Library/University Program/Clock,Library/University Program,Library" />
+   expandedCategories="Project,Library,Library/Basic Functions,Library/Basic Functions/On Chip Memory" />
  <hdlexample language="VERILOG" />
  <generation simulation="VERILOG" />
 </preferences>

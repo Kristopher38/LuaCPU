@@ -1,12 +1,12 @@
-# system info soc_system on 2021.12.16.01:19:53
+# system info soc_system on 2022.01.13.13:08:28
 system_info:
 name,value
 DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1639613961
+GENERATION_ID,1642075676
 #
 #
-# Files generated for soc_system on 2021.12.16.01:19:53
+# Files generated for soc_system on 2022.01.13.13:08:28
 files:
 filepath,kind,attributes,module,is_top
 simulation/soc_system.v,VERILOG,,soc_system,true

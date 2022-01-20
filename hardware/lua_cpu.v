@@ -121,62 +121,65 @@ module decoder(
 	end
 endmodule
 
-// module register_file(
-// 	output reg[31:0] mem_address,
-// 	input wire[31:0] mem_readdata,
-// 	output reg[31:0] mem_writedata,
-// 	output reg mem_read,
-// 	output reg mem_write,
-// 	input wire mem_waitrequest,
+module register_file(
+	output reg[31:0] mem_address,
+	input wire[31:0] mem_readdata,
+	output reg[31:0] mem_writedata,
+	output reg mem_read,
+	output reg mem_write,
+	input wire mem_waitrequest,
 
-// 	input reg[4:0] idx_a,
-// 	input reg[4:0] idx_b,
-// 	input reg[4:0] idx_c,
-// 	input reg[32:0] writedata_a,
-// 	input reg[TTAG_SIZE-1:0] writetype_a,
-// 	output reg[31:0] data_a,
-// 	output reg[31:0] data_b,
-// 	output reg[31:0] data_c,
-// 	output reg[TTAG_SIZE-1:0] type_a,
-// 	output reg[TTAG_SIZE-1:0] type_b,
-// 	output reg[TTAG_SIZE-1:0] type_c,
-// 	input reg write_a
-// );
-// 	localparam TTAG_SIZE = 3;
+	input reg[4:0] idx_a,
+	input reg[4:0] idx_b,
+	input reg[4:0] idx_c,
+	input reg[32:0] writedata_a,
+	input reg[TTAG_SIZE-1:0] writetype_a,
+	output reg[31:0] data_a,
+	output reg[31:0] data_b,
+	output reg[31:0] data_c,
+	output reg[TTAG_SIZE-1:0] type_a,
+	output reg[TTAG_SIZE-1:0] type_b,
+	output reg[TTAG_SIZE-1:0] type_c,
+	input reg write_a
+);
+	localparam TTAG_SIZE = 3;
 
-// 	localparam T_NIL = 0;
-// 	localparam T_INTEGER = 1;
-// 	localparam T_NUMBER = 2;
-// 	localparam T_STRING = 3;
-// 	localparam T_TABLE = 4;
-// 	localparam T_OTHER = 5;
+	localparam T_NIL = 0;
+	localparam T_INTEGER = 1;
+	localparam T_NUMBER = 2;
+	localparam T_STRING = 3;
+	localparam T_TABLE = 4;
+	localparam T_FUNCTION = 5;
+	localparam T_OTHER = 6;
 
-// 	reg[31:0] regs[31:0];
-// 	reg[TTAG_SIZE-1:0] ttags[31:0];
-// 	reg valid[31:0];
-// 	integer i;
+	reg[31:0] regs[31:0];
+	reg[TTAG_SIZE-1:0] ttags[31:0];
+	reg valid[31:0];
+	integer i;
 
-// 	always @(posedge clk or posedge clk) begin
-// 		if (rst) begin
-// 			for (i = 0; i < 32; i = i + 1) begin
-// 				regs[i] <= 32'd0;
-// 				ttags[i] <= T_NIL;
-// 			end
-// 		end else if (write_a) begin
-// 			regs[idx_a] <= writedata_a;
-// 			ttags[idx_a] <= writetype_a;
-// 		end
-// 	end
+	always @(posedge clk or posedge clk) begin
+		if (rst) begin
+			for (i = 0; i < 32; i = i + 1) begin
+				regs[i] <= 32'd0;
+				ttags[i] <= T_NIL;
+				valid[i] <= 1'd0;
+			end
+		end else if (write_a) begin
+			regs[idx_a] <= writedata_a;
+			ttags[idx_a] <= writetype_a;
+			valid[i] <= 1'd1;
+		end
+	end
 
-// 	always @* begin
-// 		data_a = write_a ? writedata_a : regs[idx_a];
-// 		data_b = regs[idx_b];
-// 		data_c = regs[idx_c];
-// 		type_a = write_a ? writetype_a : ttags[idx_a];
-// 		type_b = ttags[idx_b];
-// 		type_c = ttags[idx_c];
-// 	end
-// endmodule
+	always @* begin
+		data_a = write_a ? writedata_a : regs[idx_a];
+		data_b = regs[idx_b];
+		data_c = regs[idx_c];
+		type_a = write_a ? writetype_a : ttags[idx_a];
+		type_b = ttags[idx_b];
+		type_c = ttags[idx_c];
+	end
+endmodule
 
 module sequencer(
 	output reg fetch_pc,

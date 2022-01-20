@@ -659,6 +659,7 @@ static void pushclosure (lua_State *L, Proto *p, UpVal **encup, StkId base,
 void luaV_finishOp (lua_State *L) {
   CallInfo *ci = L->ci;
   StkId base = ci->u.l.base;
+  ALT_CI_LUA_STOREBASE(base);
   Instruction inst = *(ci->u.l.savedpc - 1);  /* interrupted instruction */
   OpCode op = GET_OPCODE(inst);
   switch (op) {  /* finish its execution */
@@ -747,7 +748,7 @@ void luaV_finishOp (lua_State *L) {
 #define donextjump(ci)	{ i = *ci->u.l.savedpc; dojump(ci, i, 1); }
 
 
-#define Protect(x)	{ {x;}; base = ci->u.l.base; }
+#define Protect(x)	{ {x;}; base = ci->u.l.base; ALT_CI_LUA_STOREBASE(base); }
 
 #define checkGC(L,c)  \
 	{ luaC_condGC(L, L->top = (c),  /* limit of live values */ \
@@ -796,6 +797,7 @@ void luaV_execute (lua_State *L) {
   cl = clLvalue(ci->func);  /* local reference to function's closure */
   k = cl->p->k;  /* local reference to function's constant table */
   base = ci->u.l.base;  /* local copy of function's base */
+  ALT_CI_LUA_STOREBASE(base);
   /* main loop of interpreter */
   for (;;) {
     Instruction i;
