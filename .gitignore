@@ -13,3 +13,4 @@ software/lua_on_nios2/lua/testes/time.txt
 *.vcd
 .gdb_history
 *.code-workspace
+.cache/
