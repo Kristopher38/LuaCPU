@@ -1,6 +1,9 @@
 #include "cpusim.h"
 
 int32_t gTick = 0;
+Vlua_cpu* cpu;
+SDRAMController* sdram;
+VerilatedVcdC* tfp;
 
 struct Request
 {
@@ -70,10 +73,6 @@ public:
     }
 };
 
-Vlua_cpu* cpu;
-SDRAMController* sdram;
-VerilatedVcdC* tfp;
-
 void luacpu_reset()
 {
     cpu->clock_sink_clk = 0;
@@ -131,12 +130,39 @@ inline void clk()
     clk_half();
 }
 
-Instruction luacpu_simulate(lua_State* L, CallInfo* ci)
+void instr_begin(int n)
 {
     cpu->avalon_master_waitrequest = 1;
     cpu->nios_lua_exec_slave_start = 1;
     cpu->nios_lua_exec_slave_clk_en = 1;
     cpu->clock_sink_clk = 0;
+    cpu->nios_lua_exec_slave_n = n;
+}
+
+void luacpu_storett(void* regbase, int tt)
+{
+    instr_begin(2);
+    cpu->nios_lua_exec_slave_dataa = reinterpret_cast<uint32_t>(regbase);
+    cpu->nios_lua_exec_slave_datab = static_cast<uint32_t>(tt);
+    clk();
+
+    while (!cpu->nios_lua_exec_slave_done)
+        clk();
+}
+
+void luacpu_storebase(void* base)
+{
+    instr_begin(3);
+    cpu->nios_lua_exec_slave_dataa = reinterpret_cast<uint32_t>(base);
+    clk();
+
+    while(!cpu->nios_lua_exec_slave_done)
+        clk();
+}
+
+uint32_t luacpu_simulate(void* L, void* ci)
+{
+    instr_begin(0);
     cpu->nios_lua_exec_slave_dataa = reinterpret_cast<uint32_t>(L);
     cpu->nios_lua_exec_slave_datab = reinterpret_cast<uint32_t>(ci);
     clk();

@@ -30,9 +30,6 @@
 #include "ltm.h"
 #include "lvm.h"
 
-#ifdef VERILATOR_SIM
-	#include "cpusim.h"
-#endif
 
 /* limit for table tag-method chains (to avoid loops) */
 #define MAXTAGLOOP	2000
@@ -802,10 +799,8 @@ void luaV_execute (lua_State *L) {
   for (;;) {
     Instruction i;
     StkId ra;
-#ifdef __NIOS2__
-    i = (Instruction)ALT_CI_LUA_EXEC(0, (void*)L, (void*)ci);
-#elif VERILATOR_SIM
-    i = (Instruction)luacpu_simulate(L, ci);
+#ifdef CUSTOM_LUA 
+    i = (Instruction)ALT_CI_LUA_EXEC((void*)L, (void*)ci);
 #else
     i = *(ci->u.l.savedpc++);
 #endif

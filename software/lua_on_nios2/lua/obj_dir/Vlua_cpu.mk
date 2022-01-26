@@ -35,7 +35,7 @@ VM_PREFIX = Vlua_cpu
 VM_MODPREFIX = Vlua_cpu
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
-	-DLUA_USE_LINUX -DLUA_COMPAT_5_2 -DVERILATOR_SIM -g -m32 -march=i386 \
+	-DLUA_USE_LINUX -DLUA_COMPAT_5_2 -DLUA_32BITS -DVERILATOR_SIM -g -m32 -march=i386 \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
