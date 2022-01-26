@@ -37,6 +37,7 @@ void luacpu_storeval(void* regbase, T val)
     // cpu->nios_lua_exec_slave_datab = reinterpret_cast<uint32_t>(val);
     __asm__("" : "=r" (cpu->nios_lua_exec_slave_datab) : "0" (val));
     clk();
+    cpu->nios_lua_exec_slave_start = 0;
 
     while (!cpu->nios_lua_exec_slave_done)
         clk();

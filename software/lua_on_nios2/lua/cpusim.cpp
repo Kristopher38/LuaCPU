@@ -145,6 +145,7 @@ void luacpu_storett(void* regbase, int tt)
     cpu->nios_lua_exec_slave_dataa = reinterpret_cast<uint32_t>(regbase);
     cpu->nios_lua_exec_slave_datab = static_cast<uint32_t>(tt);
     clk();
+    cpu->nios_lua_exec_slave_start = 0;
 
     while (!cpu->nios_lua_exec_slave_done)
         clk();
@@ -155,6 +156,7 @@ void luacpu_storebase(void* base)
     instr_begin(3);
     cpu->nios_lua_exec_slave_dataa = reinterpret_cast<uint32_t>(base);
     clk();
+    cpu->nios_lua_exec_slave_start = 0;
 
     while(!cpu->nios_lua_exec_slave_done)
         clk();
