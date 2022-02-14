@@ -13,8 +13,6 @@
 class Vlua_cpu__Syms;
 class Vlua_cpu___024root;
 class VerilatedVcdC;
-class Vlua_cpu_lua_cpu;
-
 
 // This class is the main interface to the Verilated model
 class Vlua_cpu VL_NOT_FINAL {
@@ -54,7 +52,6 @@ class Vlua_cpu VL_NOT_FINAL {
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
-    Vlua_cpu_lua_cpu* const __PVT__lua_cpu;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.

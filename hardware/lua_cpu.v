@@ -133,8 +133,8 @@ module decoder(
 	always @* begin
 		opcode = instruction[5:0];
 		A = instruction[13:6];
-		B = instruction[22:14];
-		C = instruction[31:23];
+		C = instruction[22:14];
+		B = instruction[31:23];
 		Bx = instruction[31:14];
 		sBx = $signed(Bx);
 	end
@@ -247,6 +247,7 @@ module register_file(
 	input reg writetype_a_en,
 	input reg[1:0] write_src,
 	input reg rst_dirty,
+	input reg rst_valid,
 	input wire clk,
 	input wire rst
 );
@@ -265,11 +266,17 @@ module register_file(
 				valid[i] <= 1'd0;
 			end
 			global_dirty <= 1'd0;
-		end else if (rst_dirty) begin
-			for (i = 0; i < 32; i = i + 1) begin
-				dirty[i] <= 1'd0;
+		end else if (rst_dirty || rst_valid) begin
+			if (rst_dirty) begin
+				for (i = 0; i < 32; i = i + 1) begin
+					dirty[i] <= 1'd0;
+				end
+				global_dirty <= 1'd0;
+			end else if (rst_valid) begin
+				for (i = 0; i < 32; i = i + 1) begin
+					valid[i] <= 1'd0;
+				end
 			end
-			global_dirty <= 1'd0;
 		end else begin 
 			if (writedata_a_en) begin
 				regs[idx_a] <= writedata_a;
@@ -432,6 +439,7 @@ module main_sequencer(
 	output reg run_instr,
 	output reg store_regs,
 	output reg dirty_clear_rf,
+	output reg valid_clear_rf,
 
 	output reg done_cpu,
 	
@@ -532,6 +540,7 @@ module main_sequencer(
 		run_instr = 1'd0;
 		store_regs = 1'd0;
 		dirty_clear_rf = 1'd0;
+		valid_clear_rf = 1'd0;
 		case(ex_state)
 			EX_START: begin end
 			EX_FETCH_PC: begin
@@ -563,6 +572,8 @@ module main_sequencer(
 			end
 			EX_LOAD_BASE: begin
 				write_base = 1'd1;
+				dirty_clear_rf = 1'd1;
+				valid_clear_rf = 1'd1;
 			end
 			EX_FINISH: begin
 				done_cpu = 1'd1;
@@ -662,7 +673,7 @@ module lua_cpu (
 	wire[31:0] data_a_rf, data_b_rf, data_c_rf;
 	wire[`TTAG_SIZE-1:0] type_a_rf, type_b_rf, type_c_rf;
 	wire dirty_a_rf, valid_a_rf;
-	wire rst_dirty_rf, global_dirty_rf;
+	wire rst_dirty_rf, global_dirty_rf, rst_valid_rf;
 
 	wire[31:0] base;
 
@@ -752,6 +763,7 @@ module lua_cpu (
 		.run_instr(run_instr),
 		.store_regs(start_regdump),
 		.dirty_clear_rf(rst_dirty_rf),
+		.valid_clear_rf(rst_valid_rf),
 
 		.done_cpu(nios_done),
 		
@@ -805,6 +817,7 @@ module lua_cpu (
 		.writedata_a_en(write_a_source_seq == `A_SOURCE_EXTERNAL ? writedata_a_en_seq && reg_idx_inject < 32 : writedata_a_en_seq || writedata_a_en_instr),
 		.writetype_a_en(write_a_source_seq == `A_SOURCE_EXTERNAL ? writetype_a_en_seq && reg_idx_inject < 32 : writetype_a_en_seq || writetype_a_en_instr),
 		.rst_dirty(rst_dirty_rf),
+		.rst_valid(rst_valid_rf),
 		.global_dirty(global_dirty_rf),
 		.clk(main_clk),
 		.rst(main_rst)

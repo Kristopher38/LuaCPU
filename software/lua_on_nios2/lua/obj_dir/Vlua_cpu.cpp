@@ -33,7 +33,6 @@ Vlua_cpu::Vlua_cpu(VerilatedContext* _vcontextp__, const char* _vcname__)
     , avalon_master_address{vlSymsp->TOP.avalon_master_address}
     , avalon_master_readdata{vlSymsp->TOP.avalon_master_readdata}
     , avalon_master_writedata{vlSymsp->TOP.avalon_master_writedata}
-    , __PVT__lua_cpu{vlSymsp->TOP.__PVT__lua_cpu}
     , rootp{&(vlSymsp->TOP)}
 {
 }
@@ -80,7 +79,7 @@ static void _eval_initial_loop(Vlua_cpu__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = Vlua_cpu___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("../../../hardware/lua_cpu.v", 576, "",
+            VL_FATAL_MT("../../../hardware/lua_cpu.v", 587, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -111,7 +110,7 @@ void Vlua_cpu::eval_step() {
             Verilated::debug(1);
             __Vchange = Vlua_cpu___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("../../../hardware/lua_cpu.v", 576, "",
+            VL_FATAL_MT("../../../hardware/lua_cpu.v", 587, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
