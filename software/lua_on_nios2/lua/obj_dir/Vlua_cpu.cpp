@@ -80,7 +80,7 @@ static void _eval_initial_loop(Vlua_cpu__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = Vlua_cpu___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("../../../hardware/lua_cpu.v", 375, "",
+            VL_FATAL_MT("../../../hardware/lua_cpu.v", 454, "",
                 "Verilated model didn't DC converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -111,7 +111,7 @@ void Vlua_cpu::eval_step() {
             Verilated::debug(1);
             __Vchange = Vlua_cpu___024root___change_request(&(vlSymsp->TOP));
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("../../../hardware/lua_cpu.v", 375, "",
+            VL_FATAL_MT("../../../hardware/lua_cpu.v", 454, "",
                 "Verilated model didn't converge\n"
                 "- See https://verilator.org/warn/DIDNOTCONVERGE");
         } else {
@@ -153,9 +153,10 @@ VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32
             "Turning on wave traces requires Verilated::traceEverOn(true) call before time 0.");
     }
     vlSymsp->__Vm_baseCode = code;
-    tracep->module(vlSymsp->name());
     tracep->scopeEscape(' ');
+    tracep->pushNamePrefix(std::string{vlSymsp->name()} + ' ');
     Vlua_cpu___024root__trace_init_top(vlSelf, tracep);
+    tracep->popNamePrefix();
     tracep->scopeEscape('.');
 }
 

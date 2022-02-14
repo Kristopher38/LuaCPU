@@ -1,5 +1,23 @@
 `timescale 1 ps / 1 ps
 
+`define INSTR_IN_PROGRESS 2'd0
+`define INSTR_DONE 2'd1
+`define INSTR_ERROR 2'd2
+`define INSTR_NOT_IMPL 2'd3
+
+`define WRITE_A_SOURCE_INT 1'd0
+`define WRITE_A_SOURCE_EXT 1'd1
+
+`define TTAG_SIZE 5
+
+`define T_NIL 0
+`define T_INTEGER 1
+`define T_NUMBER 2
+`define T_STRING 3
+`define T_TABLE 4
+`define T_FUNCTION 5
+`define T_OTHER 6
+
 module instruction_register(
 	output reg[31:0] mem_address,
 	input wire[31:0] mem_readdata,
@@ -126,43 +144,42 @@ module register_file(
 	input reg[4:0] idx_b,
 	input reg[4:0] idx_c,
 	input reg[31:0] writedata_a,
-	input reg[TTAG_SIZE-1:0] writetype_a,
+	input reg[`TTAG_SIZE-1:0] writetype_a,
 	output reg[31:0] data_a,
 	output reg[31:0] data_b,
 	output reg[31:0] data_c,
-	output reg[TTAG_SIZE-1:0] type_a,
-	output reg[TTAG_SIZE-1:0] type_b,
-	output reg[TTAG_SIZE-1:0] type_c,
+	output reg[`TTAG_SIZE-1:0] type_a,
+	output reg[`TTAG_SIZE-1:0] type_b,
+	output reg[`TTAG_SIZE-1:0] type_c,
 	input reg writedata_a_en,
 	input reg writetype_a_en,
+	input reg write_src,
 	input clk,
 	input rst
 );
-	localparam TTAG_SIZE = 5;
-
-	localparam T_NIL = 0;
-	localparam T_INTEGER = 1;
-	localparam T_NUMBER = 2;
-	localparam T_STRING = 3;
-	localparam T_TABLE = 4;
-	localparam T_FUNCTION = 5;
-	localparam T_OTHER = 6;
-
 	reg[31:0] regs[31:0];
-	reg[TTAG_SIZE-1:0] ttags[31:0];
+	reg[`TTAG_SIZE-1:0] ttags[31:0];
+	reg dirty[31:0];
 	integer i;
 
 	always @(posedge clk or posedge clk) begin
 		if (rst) begin
 			for (i = 0; i < 32; i = i + 1) begin
 				regs[i] <= 32'd0;
-				ttags[i] <= T_NIL;
+				ttags[i] <= `T_NIL;
+				dirty[i] <= 1'd0;
 			end
 		end else begin 
-			if (writedata_a_en)
+			if (writedata_a_en) begin
 				regs[idx_a] <= writedata_a;
-			if (writetype_a_en)
+				if (write_src == `WRITE_A_SOURCE_INT)
+					dirty[i] <= 1'd1;
+			end
+			if (writetype_a_en) begin
 				ttags[idx_a] <= writetype_a;
+				if (write_src == `WRITE_A_SOURCE_INT)
+					dirty[i] <= 1'd1;
+			end
 		end
 	end
 
@@ -191,40 +208,30 @@ module base_register(
 	end
 endmodule
 
-module sequencer(
-	output reg fetch_pc,
-	output reg store_pc,
-	output reg incr_pc,
-	output reg load_pc,
-	output reg fetch_instr,
-	output reg writedata_a_en_rf,
-	output reg writetype_a_en_rf,
-	output reg writedata_a_source_rf,
-	output reg writetype_a_source_rf,
-	output reg write_base,
+module instr_sequencer(
+	input reg start,
+	input reg[5:0] opcode,
+	input reg[31:0] data_a,
+	input reg[31:0] data_b,
+	input reg[31:0] data_c,
+	input reg[`TTAG_SIZE-1:0] tt_a,
+	input reg[`TTAG_SIZE-1:0] tt_b,
+	input reg[`TTAG_SIZE-1:0] tt_c,
 
-	output reg done_cpu,
-	
-	input wire done_pc,
-	input wire done_ir,
-	input wire nios_start,
-	input wire[1:0] nios_n,
-	input wire clk_en,
+	input reg[17:0] Bx,
+	input reg signed[17:0] sBx,
+
+	/* verilator lint_off UNOPTFLAT */
+	output reg[31:0] writedata_a,
+	output reg[`TTAG_SIZE-1:0] writetype_a,
+	output reg writedata_a_en,
+	output reg writetype_a_en,
+	/* verilator lint_on UNOPTFLAT */
+	output reg[1:0] instr_status,
 	input wire clk,
 	input wire rst
 );
-	// execution state constants
-	localparam EX_START = 4'd0;
-	localparam EX_FETCH_PC = 4'd1;
-	localparam EX_FETCH_INSTR = 4'd2;
-	localparam EX_STORE_PC = 4'd3;
-	localparam EX_FETCH_REGS = 4'd4;
-	localparam EX_LOAD_REG = 4'd5;
-	localparam EX_LOAD_TT = 4'd6;
-	localparam EX_LOAD_BASE = 4'd7;
-	localparam EX_FINISH = 4'd15;
-
-	// supported opcodes
+	// opcodes
 	localparam OP_MOVE = 0;
 	localparam OP_LOADK = 1;
 	localparam OP_LOADKX = 2;
@@ -273,8 +280,71 @@ module sequencer(
 	localparam OP_VARARG = 45;
 	localparam OP_EXTRAARG = 46;
 
-	localparam WRITE_A_SOURCE_INT = 1'd0;
-	localparam WRITE_A_SOURCE_EXT = 1'd1;
+	always @(posedge clk or negedge rst) begin
+		if (rst)
+			instr_status <= `INSTR_IN_PROGRESS;
+		else if (start) begin
+			case(opcode)
+				OP_MOVE: instr_status <= `INSTR_DONE;
+				default: instr_status <= `INSTR_NOT_IMPL;
+			endcase
+		end else
+			instr_status <= `INSTR_IN_PROGRESS;
+	end
+
+	always @* begin
+		writedata_a = 32'd0;
+		writetype_a = `T_NIL;
+		writedata_a_en = 1'd0;
+		writetype_a_en = 1'd0;
+		if (start) begin
+			case(opcode)
+				OP_MOVE: begin
+					writedata_a = data_b;
+					writetype_a = tt_b;
+					writedata_a_en = 1'd1;
+					writetype_a_en = 1'd1;
+				end
+				default: begin end
+			endcase
+		end
+	end
+endmodule
+
+module main_sequencer(
+	output reg fetch_pc,
+	output reg store_pc,
+	output reg incr_pc,
+	output reg load_pc,
+	output reg fetch_instr,
+	output reg writedata_a_en,
+	output reg writetype_a_en,
+	output reg write_a_source,
+	output reg write_base,
+	output reg run_instr,
+
+	output reg done_cpu,
+	
+	input wire done_pc,
+	input wire done_ir,
+	input wire[1:0] instr_status,
+	input wire nios_start,
+	input wire[1:0] nios_n,
+	input wire clk_en,
+	input wire clk,
+	input wire rst
+);
+	// execution state constants
+	localparam EX_START = 4'd0;
+	localparam EX_FETCH_PC = 4'd1;
+	localparam EX_FETCH_INSTR = 4'd2;
+	localparam EX_STORE_PC = 4'd3;
+	localparam EX_EXEC_INSTR = 4'd4;
+	localparam EX_LOAD_REG = 4'd5;
+	localparam EX_LOAD_TT = 4'd6;
+	localparam EX_LOAD_BASE = 4'd7;
+	localparam EX_STORE_REGS = 4'd8;
+	localparam EX_FINISH = 4'd15;
 
 	reg[3:0] ex_state;
 
@@ -299,15 +369,23 @@ module sequencer(
 				end
 				EX_STORE_PC: begin
 					if (done_pc)
-						ex_state <= EX_FINISH;
+						ex_state <= EX_STORE_REGS;
+				end
+				EX_STORE_REGS: begin
+					
+					ex_state <= EX_FINISH;
 				end
 				EX_FETCH_INSTR: begin
 					if (done_ir)
-						ex_state <= EX_STORE_PC;
-						//ex_state <= EX_FETCH_REGS;
+						ex_state <= EX_EXEC_INSTR;
 				end
-				EX_FETCH_REGS: begin
-
+				EX_EXEC_INSTR: begin
+					case(instr_status)
+						`INSTR_IN_PROGRESS: ex_state <= EX_EXEC_INSTR;
+						`INSTR_DONE: ex_state <= EX_FETCH_INSTR;
+						`INSTR_ERROR: ex_state <= EX_STORE_PC;
+						`INSTR_NOT_IMPL: ex_state <= EX_STORE_PC;
+					endcase
 				end
 				EX_LOAD_REG: begin
 					ex_state <= EX_FINISH;
@@ -331,12 +409,12 @@ module sequencer(
 		store_pc = 1'd0;
 		fetch_instr = 1'd0;
 		incr_pc = 1'd0;
-		writedata_a_source_rf = WRITE_A_SOURCE_INT;
-		writetype_a_source_rf = WRITE_A_SOURCE_INT;
-		writedata_a_en_rf = 1'd0;
-		writetype_a_en_rf = 1'd0;
+		write_a_source = `WRITE_A_SOURCE_INT;
+		writedata_a_en = 1'd0;
+		writetype_a_en = 1'd0;
 		write_base = 1'd0;
 		done_cpu = 1'd0;
+		run_instr = 1'd0;
 		case(ex_state)
 			EX_START: begin end
 			EX_FETCH_PC: begin
@@ -350,16 +428,17 @@ module sequencer(
 				if (done_ir)
 					incr_pc = 1'd1;
 			end
-			EX_FETCH_REGS: begin
-				
+			EX_EXEC_INSTR: begin
+				write_a_source = `WRITE_A_SOURCE_INT;
+				run_instr = 1'd1;
 			end
 			EX_LOAD_REG: begin
-				writedata_a_source_rf = WRITE_A_SOURCE_EXT;
-				writedata_a_en_rf = 1'd1;
+				write_a_source = `WRITE_A_SOURCE_EXT;
+				writedata_a_en = 1'd1;
 			end
 			EX_LOAD_TT: begin
-				writetype_a_source_rf = WRITE_A_SOURCE_EXT;
-				writetype_a_en_rf = 1'd1;
+				write_a_source = `WRITE_A_SOURCE_EXT;
+				writetype_a_en = 1'd1;
 			end
 			EX_LOAD_BASE: begin
 				write_base = 1'd1;
@@ -446,7 +525,7 @@ module lua_cpu (
 	wire[31:0] mem_addr_pc, mem_wdata_pc;
 	wire mem_r_pc, mem_w_pc;
 	wire done_pc, fetch_pc, store_pc, incr_pc, load_pc; 
-	wire writedata_a_en_rf, writetype_a_en_rf, writedata_a_source_rf, writetype_a_source_rf;
+	wire writedata_a_en_seq, writetype_a_en_seq, write_a_source_seq, writetype_a_source_rf;
 	wire write_base;
 	wire[31:0] load_data_pc;
 
@@ -458,9 +537,15 @@ module lua_cpu (
 	wire signed[17:0] sBx;
 
 	wire[31:0] data_a_rf, data_b_rf, data_c_rf;
-	wire[4:0] type_a_rf, type_b_rf, type_c_rf;
+	wire[`TTAG_SIZE-1:0] type_a_rf, type_b_rf, type_c_rf;
 
 	wire[31:0] base;
+
+	wire run_instr;
+	wire[31:0] writedata_a_instr;
+	wire[`TTAG_SIZE-1:0] writetype_a_instr;
+	wire writedata_a_en_instr, writetype_a_en_instr;
+	wire[1:0] instr_status;
 
 	instruction_register instr_reg(
 		.mem_address(mem_addr_ir),
@@ -508,44 +593,68 @@ module lua_cpu (
 		.sBx(sBx),
 		.instruction(instruction)
 	);
-	sequencer seq(
+	main_sequencer seq(
 		.fetch_pc(fetch_pc),
 		.store_pc(store_pc),
 		.incr_pc(incr_pc),
 		.load_pc(load_pc),
 		.fetch_instr(fetch_instr_ir),
-		.writedata_a_en_rf(writedata_a_en_rf),
-		.writetype_a_en_rf(writetype_a_en_rf),
-		.writedata_a_source_rf(writedata_a_source_rf),
-		.writetype_a_source_rf(writetype_a_source_rf),
+		.writedata_a_en(writedata_a_en_seq),
+		.writetype_a_en(writetype_a_en_seq),
+		.write_a_source(write_a_source_seq),
 		.write_base(write_base),
+		.run_instr(run_instr),
 
 		.done_cpu(nios_done),
 		
 		.done_pc(done_pc),
 		.done_ir(done_ir),
+		.instr_status(instr_status),
 		.nios_start(nios_start),
 		.nios_n(n),
 		.clk_en(nios_clk_en),
 		.clk(main_clk),
 		.rst(main_rst)
 	);
+	instr_sequencer instr_seq(
+		.start(run_instr),
+		.opcode(opcode),
+		.data_a(data_a_rf),
+		.data_b(data_b_rf),
+		.data_c(data_c_rf),
+		.tt_a(type_a_rf),
+		.tt_b(type_b_rf),
+		.tt_c(type_c_rf),
+
+		.Bx(Bx),
+		.sBx(sBx),
+
+		.writedata_a(writedata_a_instr),
+		.writetype_a(writetype_a_instr),
+		.writedata_a_en(writedata_a_en_instr),
+		.writetype_a_en(writetype_a_en_instr),
+		.instr_status(instr_status),
+		.clk(main_clk),
+		.rst(main_rst)
+	);
+
 	reg[31:0] regidx;
 	assign regidx = (reg_base - base) >> 3; // shift by log2(sizeof(TValue))
 	register_file rf(
-		.idx_a(writedata_a_source_rf ? regidx[4:0] : A[4:0]),
+		.idx_a(write_a_source_seq == `WRITE_A_SOURCE_EXT ? regidx[`TTAG_SIZE-1:0] : A[4:0]),
 		.idx_b(B[4:0]),
 		.idx_c(C[4:0]),
-		.writedata_a(writedata_a_source_rf ? reg_val : 32'd0),
-		.writetype_a(writetype_a_source_rf ? reg_type[4:0] : 5'd0),
+		.writedata_a(write_a_source_seq == `WRITE_A_SOURCE_EXT ? reg_val : writedata_a_instr),
+		.writetype_a(write_a_source_seq == `WRITE_A_SOURCE_EXT ? reg_type[`TTAG_SIZE-1:0] : writetype_a_instr),
+		.write_src(write_a_source_seq),
 		.data_a(data_a_rf),
 		.data_b(data_b_rf),
 		.data_c(data_c_rf),
 		.type_a(type_a_rf),
 		.type_b(type_b_rf),
 		.type_c(type_c_rf),
-		.writedata_a_en(writedata_a_source_rf ? writedata_a_en_rf && regidx < 32 : writedata_a_en_rf),
-		.writetype_a_en(writetype_a_source_rf ? writetype_a_en_rf && regidx < 32 : writetype_a_en_rf),
+		.writedata_a_en(write_a_source_seq == `WRITE_A_SOURCE_EXT ? writedata_a_en_seq && regidx < 32 : writedata_a_en_seq || writedata_a_en_instr),
+		.writetype_a_en(write_a_source_seq == `WRITE_A_SOURCE_EXT ? writetype_a_en_seq && regidx < 32 : writetype_a_en_seq || writetype_a_en_instr),
 		.clk(main_clk),
 		.rst(main_rst)
 	);
