@@ -9,7 +9,10 @@
 `define A_SOURCE_REGDUMPER 2'd1
 `define A_SOURCE_EXTERNAL 2'd3
 
-`define TTAG_SIZE 5
+`define TTAG_SIZE 7
+`define REG_COUNT 64
+`define REG_COUNT_M1 6'd63
+`define REG_ADDR_BITS 6
 
 `define T_NIL 0
 `define T_INTEGER 1
@@ -146,7 +149,7 @@ module register_dumper(
 	output reg mem_write,
 	input wire mem_waitrequest,
 
-	output reg[4:0] reg_idx,
+	output reg[`REG_ADDR_BITS-1:0] reg_idx,
 	input reg[31:0] reg_data,
 	input reg[`TTAG_SIZE-1:0] reg_type,
 	input reg reg_dirty,
@@ -162,7 +165,7 @@ module register_dumper(
 	localparam PHASE_WRITETYPE = 2'd2;
 	localparam PHASE_DONE = 2'd3;
 	reg[1:0] phase;
-	reg[4:0] cur_reg;
+	reg[`REG_ADDR_BITS-1:0] cur_reg;
 	reg[31:0] mem_reg_addr;
 	reg write_done;
 	reg should_write;
@@ -170,12 +173,12 @@ module register_dumper(
 	always @(posedge clk or posedge rst) begin
 		if (rst) begin
 			phase <= PHASE_START;
-			cur_reg <= 5'd0;
+			cur_reg <= `REG_ADDR_BITS'd0;
 		end else begin
 			case(phase)
 				PHASE_START: begin
 					if (start) begin
-						cur_reg <= 5'd0;
+						cur_reg <= `REG_ADDR_BITS'd0;
 						phase <= PHASE_WRITEDATA;
 					end
 				end
@@ -183,14 +186,14 @@ module register_dumper(
 					if (write_done)
 						if (should_write)
 							phase <= PHASE_WRITETYPE;
-						else if (cur_reg == 5'd31)
+						else if (cur_reg == `REG_COUNT_M1)
 							phase <= PHASE_DONE;
 						else
 							cur_reg <= cur_reg + 1;
 				end
 				PHASE_WRITETYPE: begin
 					if (write_done) begin
-						if (cur_reg == 5'd31)
+						if (cur_reg == `REG_COUNT_M1)
 							phase <= PHASE_DONE;
 						else
 							phase <= PHASE_WRITEDATA;
@@ -209,7 +212,7 @@ module register_dumper(
 		mem_address = 32'd0;
 		mem_writedata = 32'd0;
 		mem_write = 1'd0;
-		mem_reg_addr = base + ({27'd0, cur_reg} << 3); // shift by log2(sizeof(TValue))
+		mem_reg_addr = base + ({{(32-`REG_ADDR_BITS){1'd0}}, cur_reg} << 3); // shift by log2(sizeof(TValue))
 		done = phase == PHASE_DONE;
 		should_write = reg_dirty && reg_valid;
 		write_done = should_write ? !mem_waitrequest : 1'd1;
@@ -220,16 +223,16 @@ module register_dumper(
 			mem_write = 1'd1;
 		end else if (phase == PHASE_WRITETYPE && should_write) begin
 			mem_address = mem_reg_addr + 4; // add 4 to write into type field	
-			mem_writedata = {27'd0, reg_type};
+			mem_writedata = {{(32-`TTAG_SIZE){1'd0}}, reg_type};
 			mem_write = 1'd1;
 		end
 	end
 endmodule
 
 module register_file(
-	input reg[4:0] idx_a,
-	input reg[4:0] idx_b,
-	input reg[4:0] idx_c,
+	input reg[`REG_ADDR_BITS-1:0] idx_a,
+	input reg[`REG_ADDR_BITS-1:0] idx_b,
+	input reg[`REG_ADDR_BITS-1:0] idx_c,
 	input reg[31:0] writedata_a,
 	input reg[`TTAG_SIZE-1:0] writetype_a,
 	/* verilator lint_off UNOPTFLAT */
@@ -251,15 +254,15 @@ module register_file(
 	input wire clk,
 	input wire rst
 );
-	reg[31:0] regs[31:0];
-	reg[`TTAG_SIZE-1:0] ttags[31:0];
-	reg dirty[31:0];
-	reg valid[31:0];
+	reg[31:0] regs[`REG_COUNT-1:0];
+	reg[`TTAG_SIZE-1:0] ttags[`REG_COUNT-1:0];
+	reg dirty[`REG_COUNT-1:0];
+	reg valid[`REG_COUNT-1:0];
 	integer i;
 
 	always @(posedge clk or posedge rst) begin
 		if (rst) begin
-			for (i = 0; i < 32; i = i + 1) begin
+			for (i = 0; i < `REG_COUNT; i = i + 1) begin
 				regs[i] <= 32'd0;
 				ttags[i] <= `T_NIL;
 				dirty[i] <= 1'd0;
@@ -268,13 +271,13 @@ module register_file(
 			global_dirty <= 1'd0;
 		end else if (rst_dirty || rst_valid) begin
 			if (rst_dirty) begin
-				for (i = 0; i < 32; i = i + 1) begin
+				for (i = 0; i < `REG_COUNT; i = i + 1) begin
 					dirty[i] <= 1'd0;
 				end
 				global_dirty <= 1'd0;
 			end
 			if (rst_valid) begin
-				for (i = 0; i < 32; i = i + 1) begin
+				for (i = 0; i < `REG_COUNT; i = i + 1) begin
 					valid[i] <= 1'd0;
 				end
 			end
@@ -688,20 +691,20 @@ module lua_cpu (
 	wire[31:0] mem_wdata_regdump;
 	wire mem_w_regdump;
 
-	wire[4:0] reg_idx_regdumper;
+	wire[`REG_ADDR_BITS-1:0] reg_idx_regdumper;
 	wire done_regdump;
 	wire start_regdump;
 	
 
 	reg[31:0] reg_idx_inject;
 	assign reg_idx_inject = (reg_base - base) >> 3; // shift by log2(sizeof(TValue))
-	reg[4:0] reg_idx_a;
+	reg[`REG_ADDR_BITS-1:0] reg_idx_a;
 	always @* begin
 		case(write_a_source_seq)
-			`A_SOURCE_INSTR: reg_idx_a = A[4:0];
+			`A_SOURCE_INSTR: reg_idx_a = A[`REG_ADDR_BITS-1:0];
 			`A_SOURCE_REGDUMPER: reg_idx_a = reg_idx_regdumper;
-			`A_SOURCE_EXTERNAL: reg_idx_a = reg_idx_inject[4:0];
-			default: reg_idx_a = A[4:0];
+			`A_SOURCE_EXTERNAL: reg_idx_a = reg_idx_inject[`REG_ADDR_BITS-1:0];
+			default: reg_idx_a = A[`REG_ADDR_BITS-1:0];
 		endcase
 	end
 
@@ -802,8 +805,8 @@ module lua_cpu (
 	);
 	register_file rf(
 		.idx_a(reg_idx_a),
-		.idx_b(B[4:0]),
-		.idx_c(C[4:0]),
+		.idx_b(B[`REG_ADDR_BITS-1:0]),
+		.idx_c(C[`REG_ADDR_BITS-1:0]),
 		.writedata_a(write_a_source_seq == `A_SOURCE_EXTERNAL ? reg_val : writedata_a_instr),
 		.writetype_a(write_a_source_seq == `A_SOURCE_EXTERNAL ? reg_type[`TTAG_SIZE-1:0] : writetype_a_instr),
 		.write_src(write_a_source_seq),
@@ -815,8 +818,8 @@ module lua_cpu (
 		.type_c(type_c_rf),
 		.dirty_a(dirty_a_rf),
 		.valid_a(valid_a_rf),
-		.writedata_a_en(write_a_source_seq == `A_SOURCE_EXTERNAL ? writedata_a_en_seq && reg_idx_inject < 32 : writedata_a_en_seq || writedata_a_en_instr),
-		.writetype_a_en(write_a_source_seq == `A_SOURCE_EXTERNAL ? writetype_a_en_seq && reg_idx_inject < 32 : writetype_a_en_seq || writetype_a_en_instr),
+		.writedata_a_en(write_a_source_seq == `A_SOURCE_EXTERNAL ? writedata_a_en_seq && reg_idx_inject < `REG_COUNT : writedata_a_en_seq || writedata_a_en_instr),
+		.writetype_a_en(write_a_source_seq == `A_SOURCE_EXTERNAL ? writetype_a_en_seq && reg_idx_inject < `REG_COUNT : writetype_a_en_seq || writetype_a_en_instr),
 		.rst_dirty(rst_dirty_rf),
 		.rst_valid(rst_valid_rf),
 		.global_dirty(global_dirty_rf),
