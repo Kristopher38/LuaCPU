@@ -194,34 +194,36 @@ typedef struct lua_TValue {
 
 
 // /* Macros to set values */
-#ifdef __NIOS2__
-  #define settt_(reg,t) { ((reg)->tt_=(t)); ALT_CI_LUA_STORETT((reg), (t)); }
+#ifdef CUSTOM_LUA
+  #define settt_(reg,t) { ((reg)->tt_=(t)); luacpu_storett((void*)(reg), (t)); }
 #else
-  #define settt_(o,t) ((o)->tt_=(t))
+  #define settt_(o,t) { ((o)->tt_=(t)); }
 #endif
 
 #define setfltvalue(obj,x) \
-  { TValue *io=(obj); val_(io).n=(x); ALT_CI_LUA_STOREVALF((io), (x)); settt_(io, LUA_TNUMFLT); }
+  { TValue *io=(obj); lua_Number v=(x); val_(io).n=v; ALT_CI_LUA_STOREVALF((io), v); settt_(io, LUA_TNUMFLT); }
 
 #define chgfltvalue(obj,x) \
-  { TValue *io=(obj); lua_assert(ttisfloat(io)); val_(io).n=(x); ALT_CI_LUA_STOREVALF((io), (x)); }
+  { TValue *io=(obj); lua_assert(ttisfloat(io)); lua_Number v=(x); val_(io).n=v; ALT_CI_LUA_STOREVALF((io), v); }
 
 #define setivalue(obj,x) \
-  { TValue *io=(obj); val_(io).i=(x); settt_(io, LUA_TNUMINT); ALT_CI_LUA_STOREVALI((io), (x)); }
+  { TValue *io=(obj); lua_Integer v=(x); val_(io).i=v; ALT_CI_LUA_STOREVALI((io), v); settt_(io, LUA_TNUMINT); }
 
 #define chgivalue(obj,x) \
-  { TValue *io=(obj); lua_assert(ttisinteger(io)); val_(io).i=(x); ALT_CI_LUA_STOREVALI((io), (x)); }
+  { TValue *io=(obj); lua_assert(ttisinteger(io)); lua_Integer v=(x); val_(io).i=v; ALT_CI_LUA_STOREVALI((io), v); }
 
-#define setnilvalue(obj) settt_(obj, LUA_TNIL)
+#define setnilvalue(obj) { TValue *io=(obj); settt_(io, LUA_TNIL); }
+
+#define setnilkvalue(obj) { settt_((obj), LUA_TNIL); }
 
 #define setfvalue(obj,x) \
-  { TValue *io=(obj); val_(io).f=(x); ALT_CI_LUA_STOREVALP((io), (x)); settt_(io, LUA_TLCF); }
+  { TValue *io=(obj); lua_CFunction v=(x); val_(io).f=v; ALT_CI_LUA_STOREVALP((io), v); settt_(io, LUA_TLCF); }
 
 #define setpvalue(obj,x) \
-  { TValue *io=(obj); val_(io).p=(x); ALT_CI_LUA_STOREVALP((io), (x)); settt_(io, LUA_TLIGHTUSERDATA); }
+  { TValue *io=(obj); void* v=(x);  val_(io).p=v; ALT_CI_LUA_STOREVALP((io), v); settt_(io, LUA_TLIGHTUSERDATA); }
 
 #define setbvalue(obj,x) \
-  { TValue *io=(obj); val_(io).b=(x); ALT_CI_LUA_STOREVALI((io), (x)); settt_(io, LUA_TBOOLEAN); }
+  { TValue *io=(obj); int v=(x); val_(io).b=v; ALT_CI_LUA_STOREVALI((io), v); settt_(io, LUA_TBOOLEAN); }
 
 #define setgcovalue(L,obj,x) \
   { TValue *io = (obj); GCObject *i_g=(x); \

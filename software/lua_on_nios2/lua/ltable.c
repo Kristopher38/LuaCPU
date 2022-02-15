@@ -323,7 +323,7 @@ static void setnodevector (lua_State *L, Table *t, unsigned int size) {
     for (i = 0; i < (int)size; i++) {
       Node *n = gnode(t, i);
       gnext(n) = 0;
-      setnilvalue(wgkey(n));
+      setnilkvalue(wgkey(n));
       setnilvalue(gval(n));
     }
     t->lsizenode = cast_byte(lsize);
