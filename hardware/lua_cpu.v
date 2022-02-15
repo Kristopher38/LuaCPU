@@ -272,7 +272,8 @@ module register_file(
 					dirty[i] <= 1'd0;
 				end
 				global_dirty <= 1'd0;
-			end else if (rst_valid) begin
+			end
+			if (rst_valid) begin
 				for (i = 0; i < 32; i = i + 1) begin
 					valid[i] <= 1'd0;
 				end
