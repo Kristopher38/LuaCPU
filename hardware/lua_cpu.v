@@ -2,7 +2,7 @@
 
 `define INSTR_IN_PROGRESS 2'd0
 `define INSTR_DONE 2'd1
-`define INSTR_ERROR 2'd2
+`define INSTR_IDLE 2'd2
 `define INSTR_NOT_IMPL 2'd3
 
 `define A_SOURCE_INSTR 2'd0
@@ -339,6 +339,8 @@ module instr_sequencer(
 	input wire[`TTAG_SIZE-1:0] tt_a,
 	input wire[`TTAG_SIZE-1:0] tt_b,
 	input wire[`TTAG_SIZE-1:0] tt_c,
+	input wire rkb,
+	input wire rkc,
 
 	input wire[17:0] Bx,
 	input wire signed[17:0] sBx,
@@ -401,17 +403,34 @@ module instr_sequencer(
 	localparam OP_CLOSURE = 44;
 	localparam OP_VARARG = 45;
 	localparam OP_EXTRAARG = 46;
+	
+	localparam TT_FLT = 3;
+	localparam TT_INT = 19;
 
 	always @(posedge clk or posedge rst) begin
 		if (rst)
-			instr_status <= `INSTR_IN_PROGRESS;
+			instr_status <= `INSTR_IDLE;
 		else if (start) begin
-			case(opcode)
-				OP_MOVE: instr_status <= `INSTR_DONE;
-				default: instr_status <= `INSTR_NOT_IMPL;
+			case (instr_status)
+				`INSTR_IDLE: case(opcode)
+					OP_MOVE: instr_status <= `INSTR_IN_PROGRESS;
+					OP_ADD, OP_SUB, OP_MUL: begin
+						if ((tt_b & `TTAG_SIZE'h1F) == TT_INT && (tt_c & `TTAG_SIZE'h1F) == TT_INT && !rkb && !rkc)
+							instr_status <= `INSTR_IN_PROGRESS;
+						else
+							instr_status <= `INSTR_NOT_IMPL;
+					end
+					default: instr_status <= `INSTR_NOT_IMPL;
+				endcase
+				`INSTR_IN_PROGRESS: case(opcode)
+					OP_MOVE: instr_status <= `INSTR_DONE;
+					OP_ADD, OP_SUB, OP_MUL: instr_status <= `INSTR_DONE;
+					default: instr_status <= `INSTR_DONE;
+				endcase
+				default: instr_status <= `INSTR_IDLE;
 			endcase
 		end else
-			instr_status <= `INSTR_IN_PROGRESS;
+			instr_status <= `INSTR_IDLE;
 	end
 
 	always @* begin
@@ -419,11 +438,29 @@ module instr_sequencer(
 		writetype_a = `T_NIL;
 		writedata_a_en = 1'd0;
 		writetype_a_en = 1'd0;
-		if (start) begin
+		if (instr_status == `INSTR_IN_PROGRESS) begin
 			case(opcode)
 				OP_MOVE: begin
 					writedata_a = data_b;
 					writetype_a = tt_b;
+					writedata_a_en = 1'd1;
+					writetype_a_en = 1'd1;
+				end
+				OP_ADD: begin
+					writedata_a = data_b + data_c;
+					writetype_a = TT_INT;
+					writedata_a_en = 1'd1;
+					writetype_a_en = 1'd1;
+				end
+				OP_SUB: begin
+					writedata_a = data_b - data_c;
+					writetype_a = TT_INT;
+					writedata_a_en = 1'd1;
+					writetype_a_en = 1'd1;
+				end
+				OP_MUL: begin
+					writedata_a = data_b * data_c;
+					writetype_a = TT_INT;
 					writedata_a_en = 1'd1;
 					writetype_a_en = 1'd1;
 				end
@@ -513,7 +550,7 @@ module main_sequencer(
 					case(instr_status)
 						`INSTR_IN_PROGRESS: ex_state <= EX_EXEC_INSTR;
 						`INSTR_DONE: ex_state <= EX_FETCH_INSTR;
-						`INSTR_ERROR: ex_state <= EX_STORE_PC;
+						`INSTR_IDLE: ex_state <= EX_EXEC_INSTR;
 						`INSTR_NOT_IMPL: ex_state <= EX_STORE_PC;
 					endcase
 				end
@@ -795,6 +832,8 @@ module lua_cpu (
 		.tt_a(type_a_rf),
 		.tt_b(type_b_rf),
 		.tt_c(type_c_rf),
+		.rkb(B[8:8]),
+		.rkc(C[8:8]),
 
 		.Bx(Bx),
 		.sBx(sBx),

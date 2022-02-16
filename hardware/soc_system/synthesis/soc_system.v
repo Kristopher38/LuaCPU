@@ -162,7 +162,6 @@ module soc_system (
 	wire          lua_cpu_0_avalon_master_waitrequest;                                              // mm_interconnect_0:lua_cpu_0_avalon_master_waitrequest -> lua_cpu_0:avalon_master_waitrequest
 	wire   [31:0] lua_cpu_0_avalon_master_address;                                                  // lua_cpu_0:avalon_master_address -> mm_interconnect_0:lua_cpu_0_avalon_master_address
 	wire          lua_cpu_0_avalon_master_read;                                                     // lua_cpu_0:avalon_master_read -> mm_interconnect_0:lua_cpu_0_avalon_master_read
-	wire          lua_cpu_0_avalon_master_readdatavalid;                                            // mm_interconnect_0:lua_cpu_0_avalon_master_readdatavalid -> lua_cpu_0:avalon_master_readdatavalid
 	wire   [31:0] lua_cpu_0_avalon_master_writedata;                                                // lua_cpu_0:avalon_master_writedata -> mm_interconnect_0:lua_cpu_0_avalon_master_writedata
 	wire          lua_cpu_0_avalon_master_write;                                                    // lua_cpu_0:avalon_master_write -> mm_interconnect_0:lua_cpu_0_avalon_master_write
 	wire   [31:0] nios2_gen2_0_data_master_readdata;                                                // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
@@ -542,7 +541,6 @@ module soc_system (
 		.avalon_master_read          (lua_cpu_0_avalon_master_read),                                                     //                    .read
 		.avalon_master_write         (lua_cpu_0_avalon_master_write),                                                    //                    .write
 		.avalon_master_waitrequest   (lua_cpu_0_avalon_master_waitrequest),                                              //                    .waitrequest
-		.avalon_master_readdatavalid (lua_cpu_0_avalon_master_readdatavalid),                                            //                    .readdatavalid
 		.clock_sink_clk              (pll_0_outclk0_clk),                                                                //          clock_sink.clk
 		.reset_sink_reset            (rst_controller_reset_out_reset)                                                    //          reset_sink.reset
 	);
@@ -878,7 +876,6 @@ module soc_system (
 		.lua_cpu_0_avalon_master_waitrequest                              (lua_cpu_0_avalon_master_waitrequest),                        //                                                           .waitrequest
 		.lua_cpu_0_avalon_master_read                                     (lua_cpu_0_avalon_master_read),                               //                                                           .read
 		.lua_cpu_0_avalon_master_readdata                                 (lua_cpu_0_avalon_master_readdata),                           //                                                           .readdata
-		.lua_cpu_0_avalon_master_readdatavalid                            (lua_cpu_0_avalon_master_readdatavalid),                      //                                                           .readdatavalid
 		.lua_cpu_0_avalon_master_write                                    (lua_cpu_0_avalon_master_write),                              //                                                           .write
 		.lua_cpu_0_avalon_master_writedata                                (lua_cpu_0_avalon_master_writedata),                          //                                                           .writedata
 		.nios2_gen2_0_data_master_address                                 (nios2_gen2_0_data_master_address),                           //                                   nios2_gen2_0_data_master.address

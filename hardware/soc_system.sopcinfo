@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2022.01.13.13:08:49 -->
+ <!-- 2022.02.16.22:08:01 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1642075719</value>
+  <value>1645045668</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -75600,12 +75600,6 @@ parameters are a RESULT of the module parameters. -->
     <width>1</width>
     <role>waitrequest</role>
    </port>
-   <port>
-    <name>avalon_master_readdatavalid</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>readdatavalid</role>
-   </port>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>sdram_controller_0</moduleName>
@@ -85025,7 +85019,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1642075719</value>
+   <value>1645045668</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -85045,7 +85039,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1642075719</value>
+   <value>1645045668</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -85061,7 +85055,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1642075719</value>
+   <value>1645045668</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -85531,7 +85525,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1642075719</value>
+   <value>1645045668</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -85551,7 +85545,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1642075719</value>
+   <value>1645045668</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -85567,7 +85561,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1642075719</value>
+   <value>1645045668</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

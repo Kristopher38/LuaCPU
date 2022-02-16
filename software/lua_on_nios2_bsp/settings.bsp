@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jan 26, 2022 7:45:46 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1643222746460</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 16, 2022 10:25:27 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1645046727831</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/kris/luacpu/software/lua_on_nios2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>/home/kris/luacpu/hardware/soc_system.sopcinfo</SopcDesignFile>

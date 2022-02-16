@@ -1,13 +1,13 @@
-Partition Merge Status : Successful - Wed Dec 15 20:44:18 2021
+Partition Merge Status : Successful - Wed Feb 16 16:32:01 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : HPS_LED_HEX
 Top-level Entity Name : HPS_LED_HEX
 Family : Cyclone V
-Logic utilization (in ALMs) : 4,935 / 32,070 ( 15 % )
-Total registers : 7362
+Logic utilization (in ALMs) : 7,133 / 32,070 ( 22 % )
+Total registers : 9643
 Total pins : 368 / 457 ( 81 % )
 Total virtual pins : 0
-Total block memory bits : 595,968 / 4,065,280 ( 15 % )
+Total block memory bits : 1,770,880 / 4,065,280 ( 44 % )
 Total DSP Blocks : 3 / 87 ( 3 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

@@ -19,8 +19,7 @@
   </columns>
  </clocktable>
  <window width="1684" height="1015" x="-2" y="0" />
- <library
-   expandedCategories="Project,Library,Library/Basic Functions,Library/Basic Functions/On Chip Memory" />
+ <library expandedCategories="Library,Project" />
  <hdlexample language="VERILOG" />
- <generation simulation="VERILOG" />
+ <generation simulation="NONE" />
 </preferences>
