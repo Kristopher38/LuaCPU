@@ -31,7 +31,7 @@ module instruction_register(
 	input wire mem_waitrequest,
 
 	output reg[31:0] instruction,
-	input reg[31:0] PC,
+	input wire[31:0] PC,
 
 	output reg done,
 	input wire fetch_instr,
@@ -52,6 +52,8 @@ module instruction_register(
 	always @* begin
 		mem_address = 32'd0;
 		mem_read = 1'd0;
+		mem_write = 1'd0;
+		mem_writedata = 32'd0;
 		if (fetch_instr && !done) begin
 			mem_address = PC;
 			mem_read = 1'd1;
@@ -108,9 +110,10 @@ module program_counter(
 	end
 
 	always @(posedge clk or posedge rst) begin
-		if (rst)
+		if (rst) begin
 			PC <= 32'd0;
-		else if (fetch_pc && !mem_waitrequest) begin
+			done <= 1'd0;
+		end else if (fetch_pc && !mem_waitrequest) begin
 			PC <= mem_readdata;
 			done <= 1'd1;
 		end else if (incr_pc)
@@ -131,7 +134,7 @@ module decoder(
 	output reg[8:0] C,
 	output reg[17:0] Bx,
 	output reg signed[17:0] sBx,
-	input reg[31:0] instruction
+	input wire[31:0] instruction
 );
 	always @* begin
 		opcode = instruction[5:0];
@@ -150,13 +153,13 @@ module register_dumper(
 	input wire mem_waitrequest,
 
 	output reg[`REG_ADDR_BITS-1:0] reg_idx,
-	input reg[31:0] reg_data,
-	input reg[`TTAG_SIZE-1:0] reg_type,
-	input reg reg_dirty,
-	input reg reg_valid,
+	input wire[31:0] reg_data,
+	input wire[`TTAG_SIZE-1:0] reg_type,
+	input wire reg_dirty,
+	input wire reg_valid,
 	output reg done,
-	input reg[31:0] base,
-	input reg start,
+	input wire[31:0] base,
+	input wire start,
 	input wire clk,
 	input wire rst
 );
@@ -230,11 +233,11 @@ module register_dumper(
 endmodule
 
 module register_file(
-	input reg[`REG_ADDR_BITS-1:0] idx_a,
-	input reg[`REG_ADDR_BITS-1:0] idx_b,
-	input reg[`REG_ADDR_BITS-1:0] idx_c,
-	input reg[31:0] writedata_a,
-	input reg[`TTAG_SIZE-1:0] writetype_a,
+	input wire[`REG_ADDR_BITS-1:0] idx_a,
+	input wire[`REG_ADDR_BITS-1:0] idx_b,
+	input wire[`REG_ADDR_BITS-1:0] idx_c,
+	input wire[31:0] writedata_a,
+	input wire[`TTAG_SIZE-1:0] writetype_a,
 	/* verilator lint_off UNOPTFLAT */
 	output reg[31:0] data_a,
 	output reg[31:0] data_b,
@@ -246,11 +249,11 @@ module register_file(
 	output reg valid_a,
 	output reg global_dirty,
 	/* verilator lint_on UNOPTFLAT */
-	input reg writedata_a_en,
-	input reg writetype_a_en,
-	input reg[1:0] write_src,
-	input reg rst_dirty,
-	input reg rst_valid,
+	input wire writedata_a_en,
+	input wire writetype_a_en,
+	input wire[1:0] write_src,
+	input wire rst_dirty,
+	input wire rst_valid,
 	input wire clk,
 	input wire rst
 );
@@ -313,8 +316,8 @@ module register_file(
 endmodule
 
 module base_register(
-	input reg write,
-	input reg[31:0] writedata,
+	input wire write,
+	input wire[31:0] writedata,
 	output reg[31:0] base,
 	input wire clk,
 	input wire rst
@@ -328,17 +331,17 @@ module base_register(
 endmodule
 
 module instr_sequencer(
-	input reg start,
-	input reg[5:0] opcode,
-	input reg[31:0] data_a,
-	input reg[31:0] data_b,
-	input reg[31:0] data_c,
-	input reg[`TTAG_SIZE-1:0] tt_a,
-	input reg[`TTAG_SIZE-1:0] tt_b,
-	input reg[`TTAG_SIZE-1:0] tt_c,
+	input wire start,
+	input wire[5:0] opcode,
+	input wire[31:0] data_a,
+	input wire[31:0] data_b,
+	input wire[31:0] data_c,
+	input wire[`TTAG_SIZE-1:0] tt_a,
+	input wire[`TTAG_SIZE-1:0] tt_b,
+	input wire[`TTAG_SIZE-1:0] tt_c,
 
-	input reg[17:0] Bx,
-	input reg signed[17:0] sBx,
+	input wire[17:0] Bx,
+	input wire signed[17:0] sBx,
 
 	/* verilator lint_off UNOPTFLAT */
 	output reg[31:0] writedata_a,
@@ -399,7 +402,7 @@ module instr_sequencer(
 	localparam OP_VARARG = 45;
 	localparam OP_EXTRAARG = 46;
 
-	always @(posedge clk or negedge rst) begin
+	always @(posedge clk or posedge rst) begin
 		if (rst)
 			instr_status <= `INSTR_IN_PROGRESS;
 		else if (start) begin
@@ -536,6 +539,7 @@ module main_sequencer(
 		store_pc = 1'd0;
 		fetch_instr = 1'd0;
 		incr_pc = 1'd0;
+		load_pc = 1'd0;
 		write_a_source = `A_SOURCE_INSTR;
 		writedata_a_en = 1'd0;
 		writetype_a_en = 1'd0;
@@ -623,7 +627,7 @@ module lua_cpu (
 	wire[31:0] L, ci, reg_base, reg_val, reg_type;
 	wire[1:0] n;
 	wire[31:0] mem_rdata;
-	reg nios_done;
+	wire nios_done;
 	reg mem_r, mem_w;
 	reg[31:0] nios_result;
 	reg[31:0] mem_addr, mem_wdata;
@@ -696,7 +700,7 @@ module lua_cpu (
 	wire start_regdump;
 	
 
-	reg[31:0] reg_idx_inject;
+	wire[31:0] reg_idx_inject;
 	assign reg_idx_inject = (reg_base - base) >> 3; // shift by log2(sizeof(TValue))
 	reg[`REG_ADDR_BITS-1:0] reg_idx_a;
 	always @* begin

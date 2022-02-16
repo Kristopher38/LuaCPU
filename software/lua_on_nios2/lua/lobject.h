@@ -195,7 +195,7 @@ typedef struct lua_TValue {
 
 // /* Macros to set values */
 #ifdef CUSTOM_LUA
-  #define settt_(reg,t) { ((reg)->tt_=(t)); luacpu_storett((void*)(reg), (t)); }
+  #define settt_(reg,t) { ((reg)->tt_=(t)); ALT_CI_LUA_STORETT((void*)(reg), (t)); }
 #else
   #define settt_(o,t) { ((o)->tt_=(t)); }
 #endif
